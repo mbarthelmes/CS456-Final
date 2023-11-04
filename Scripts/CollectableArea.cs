@@ -14,7 +14,7 @@ public partial class CollectableArea : Area3D
 
     private void WinArea_BodyShapeEntered(Rid bodyRid, Node3D body, long bodyShapeIndex, long localShapeIndex)
     {
-        if(body is Player player)
+        if(body is Player player && player.Id == Multiplayer.MultiplayerPeer.GetUniqueId())
         {
             _playerData.OnCollectableCollected(player.Id);
             QueueFree();
