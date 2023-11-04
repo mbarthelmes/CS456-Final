@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dr2aunc22e5ag" path="res://Scenes/Level1.tscn" id="5_2lxkn"]
 [ext_resource type="Script" path="res://Scripts/LoseArea.cs" id="5_3ycx0"]
 [ext_resource type="Script" path="res://Scripts/WinArea.cs" id="5_6frfg"]
-[ext_resource type="PackedScene" uid="uid://b48bo6os0bena" path="res://Scenes/Level2.tscn" id="10_2j3s3"]
+[ext_resource type="PackedScene" uid="uid://sa47hlufuikj" path="res://Scenes/Level2.tscn" id="10_2j3s3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vd03e"]
 friction = 0.5
@@ -55,7 +55,6 @@ can_sleep = false
 [node name="WinArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 0)
 script = ExtResource("5_6frfg")
-NextLevel = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WinArea"]
 shape = SubResource("BoxShape3D_gmdnl")
