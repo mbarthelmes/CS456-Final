@@ -70,6 +70,7 @@ billboard = 1
 text = "Lose"
 
 [node name="Playground" parent="." instance=ExtResource("2_j2f0r")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 79.0093, 10.623, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fvjq4")

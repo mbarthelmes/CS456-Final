@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bx2532212su2y"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Playground.tscn" id="1_etlq1"]
+[ext_resource type="PackedScene" uid="uid://ct2sb86d3f2ur" path="res://Scenes/Playground.tscn" id="1_etlq1"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_3n6hh"]
 left_to_right = 0.0
