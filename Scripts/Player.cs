@@ -104,5 +104,11 @@ public partial class Player : RigidBody3D
         {
             _jumping = false;
         }
+
+
+        if (Input.IsKeyPressed(Key.Escape))
+        {
+            GetTree().Quit();
+        }
     }
 }
