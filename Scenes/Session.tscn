@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ohp7d7feq3ch"]
+[gd_scene load_steps=4 format=3 uid="uid://ohp7d7feq3ch"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerData.cs" id="1_h5aem"]
 [ext_resource type="Script" path="res://Scripts/ClientServer.cs" id="2_kypsv"]
+[ext_resource type="Script" path="res://Scripts/Levels.cs" id="3_iri70"]
 
 [node name="Session" type="Node"]
 
@@ -10,3 +11,6 @@ script = ExtResource("1_h5aem")
 
 [node name="ClientServer" type="Node" parent="."]
 script = ExtResource("2_kypsv")
+
+[node name="Levels" type="Node" parent="."]
+script = ExtResource("3_iri70")

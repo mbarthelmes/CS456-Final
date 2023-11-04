@@ -6,8 +6,14 @@ using System.Globalization;
 public partial class PlayerData : Node
 {
 	public Dictionary<long, PlayerInfo> Players = new Dictionary<long, PlayerInfo>();
+	private Levels _levels;
 
-	public void OnPlayerConnected(Player player)
+    public override void _Ready()
+    {
+        _levels = (Levels)GetParent().FindChild("Levels");
+    }
+
+    public void OnPlayerConnected(Player player)
 	{
 		Players.TryAdd(player.Id, new PlayerInfo(player));
 	}
@@ -25,9 +31,11 @@ public partial class PlayerData : Node
 
 	public void OnPlayerDied(long id, int level)
 	{
-		//TODO telelportat the character at a position and reset velocities
-		//Get the position they should teleport to using the level they died in
-	}
+		var player = Players[id].Player;
+		player.Position = _levels.Spawns[level].Position;
+		player.LinearVelocity = Vector3.Zero;
+		player.AngularVelocity = Vector3.Zero;
+    }
 }
 
 public class PlayerInfo

@@ -40,7 +40,7 @@ public partial class ClientServer : Node
 
     public override void _Process(double delta)
     {
-        if (Multiplayer.IsServer())
+        if (Multiplayer.MultiplayerPeer != null && Multiplayer.IsServer())
         {
             _timeElapsed += delta;
 
@@ -60,9 +60,8 @@ public partial class ClientServer : Node
     public void Host()
     {
         GD.Print(_peer.CreateServer(PORT));
-        GD.Print($"Server: {Multiplayer.IsServer()}");
-
         Multiplayer.MultiplayerPeer = _peer;
+        GD.Print($"Server: {Multiplayer.IsServer()}");
     }
 
     private void Multiplayer_PeerDisconnected(long id)
