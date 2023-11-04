@@ -50,6 +50,15 @@ public partial class MainMenu : Node2D
     {
         Visible = false;
         Multiplayer.ConnectedToServer -= Multiplayer_ConnectedToServer;
+        ((Player)FindParent("Node3D").FindChild("Player")).SetId(Multiplayer.MultiplayerPeer.GetUniqueId());
+        Multiplayer.ServerDisconnected += Multiplayer_ServerDisconnected;
+    }
+
+    private void Multiplayer_ServerDisconnected()
+    {
+        Multiplayer.MultiplayerPeer = null;
+        Visible = true;
+        Multiplayer.ServerDisconnected -= Multiplayer_ServerDisconnected;
     }
 
     private void _host_Pressed()

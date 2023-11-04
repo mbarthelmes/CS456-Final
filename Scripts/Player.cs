@@ -1,9 +1,10 @@
 using Godot;
+using Marbles.Scripts;
 using System;
 
 public partial class Player : RigidBody3D
 {
-    public int Id = 1;
+    public long Id = 1;
 
     [Export]
     public float GroundSpeed = 5;
@@ -27,8 +28,25 @@ public partial class Player : RigidBody3D
         _collider = (CollisionShape3D)FindChild("CollisionShape3D");
         _camera = (Node3D)FindParent("Node3D").FindChild("Camera3D");
         _playerData = (PlayerData)FindParent("Node3D").FindChild("Session").FindChild("PlayerData");
+    }
 
-        _playerData.OnPlayerConnected(Id);
+    public override void _Process(double delta)
+    {
+        if (Multiplayer.IsServer())
+        {
+
+        }
+        else
+        {
+            RpcId(1, nameof(ClientServer.UpdateServer), Id, Position, LinearVelocity);
+        }
+    }
+
+    public void SetId(long id)
+    {
+        _playerData.Players.Remove(Id);
+        Id = id;
+        _playerData.OnPlayerConnected(this);
     }
 
     public override void _PhysicsProcess(double delta)
