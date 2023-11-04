@@ -26,7 +26,7 @@ public partial class Camera : Camera3D
     {
         if (@event is InputEventMouseMotion mouseMotionEvent)
         {
-            
+      
             _rotationX += mouseMotionEvent.Relative.X * LookAroundSpeed;
             _rotationY += mouseMotionEvent.Relative.Y * LookAroundSpeed;
 

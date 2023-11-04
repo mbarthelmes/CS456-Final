@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b48bo6os0bena"]
+[gd_scene load_steps=5 format=3 uid="uid://sa47hlufuikj"]
 
-[ext_resource type="PackedScene" uid="uid://ba7d2yrfjkp2r" path="res://Scenes/round_ramp.tscn" id="1_5txse"]
+[ext_resource type="PackedScene" path="res://Scenes/round_ramp.tscn" id="1_5txse"]
 [ext_resource type="Script" path="res://Scripts/Spawn.cs" id="2_2kox7"]
 [ext_resource type="Script" path="res://Scripts/WinArea.cs" id="2_2m7iw"]
 
@@ -22,7 +22,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 5, 2)
 [node name="WinArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
 script = ExtResource("2_2m7iw")
-NextLevel = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WinArea"]
 shape = SubResource("BoxShape3D_3sk3g")
