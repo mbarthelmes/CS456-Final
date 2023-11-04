@@ -16,8 +16,6 @@ public partial class Camera : Camera3D
 	{
 		_player = (Node3D)FindParent("Node3D").FindChild("Player");
 
-        // Check if the "MainMenu" scene is loaded
-       
 	}
 
    
@@ -36,14 +34,6 @@ public partial class Camera : Camera3D
             _rotationX += mouseMotionEvent.Relative.X * LookAroundSpeed;
             _rotationY += mouseMotionEvent.Relative.Y * LookAroundSpeed;
 
-            // reset rotation
-            /*Transform3D transform = Transform;
-            transform.Basis = Basis.Identity;
-            Transform = transform;
-
-            RotateObjectLocal(Vector3.Up, _rotationX); // first rotate about Y
-            RotateObjectLocal(Vector3.Right, _rotationY);*/
-            
             
             _menu = (Node2D)FindParent("Node3D").FindChild("MainMenu");
 
