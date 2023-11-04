@@ -25,6 +25,17 @@ public partial class ClientServer : Node
         _playerData = (PlayerData)GetParent().FindChild("PlayerData");
         _playerScene = GD.Load<PackedScene>("Scenes/Player.tscn");
         _peer = new ENetMultiplayerPeer();
+
+        Multiplayer.PeerConnected += Multiplayer_PeerConnected;
+        Multiplayer.PeerDisconnected += Multiplayer_PeerDisconnected;
+    }
+
+    private void Multiplayer_PeerConnected(long id)
+    {
+        Player newPlayer = (Player)_playerScene.Instantiate();
+        newPlayer.Id = id;
+        FindParent("Node3D").AddChild(newPlayer);
+        _playerData.OnPlayerConnected(newPlayer);
     }
 
     public override void _Process(double delta)
@@ -50,8 +61,6 @@ public partial class ClientServer : Node
     {
         GD.Print(_peer.CreateServer(PORT));
         GD.Print($"Server: {Multiplayer.IsServer()}");
-        Multiplayer.PeerConnected += Server_PeerConnected;
-        Multiplayer.PeerDisconnected += Multiplayer_PeerDisconnected;
 
         Multiplayer.MultiplayerPeer = _peer;
     }
@@ -59,14 +68,6 @@ public partial class ClientServer : Node
     private void Multiplayer_PeerDisconnected(long id)
     {
         _playerData.OnPlayerDisconnected(id);
-    }
-
-    private void Server_PeerConnected(long id)
-    {
-        Player newPlayer = (Player)_playerScene.Instantiate();
-        newPlayer.Id = id;
-        FindParent("Node3D").AddChild(newPlayer);
-        _playerData.OnPlayerConnected(newPlayer);
     }
 
     [Rpc(MultiplayerApi.RpcMode.Authority)]
@@ -85,10 +86,16 @@ public partial class ClientServer : Node
     public void Join(string ip)
     {
         Multiplayer.ConnectedToServer += Multiplayer_ConnectedToServer;
-
+        Multiplayer.ConnectionFailed += Multiplayer_ConnectionFailed;
+        
         GD.Print(_peer.CreateClient(ip, PORT));
         GD.Print($"Client: {!Multiplayer.IsServer()}");
         Multiplayer.MultiplayerPeer = _peer;
+    }
+
+    private void Multiplayer_ConnectionFailed()
+    {
+        Multiplayer.MultiplayerPeer = null;
     }
 
     private void Multiplayer_ConnectedToServer()

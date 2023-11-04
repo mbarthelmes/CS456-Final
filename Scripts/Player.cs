@@ -28,6 +28,8 @@ public partial class Player : RigidBody3D
         _collider = (CollisionShape3D)FindChild("CollisionShape3D");
         _camera = (Node3D)FindParent("Node3D").FindChild("Camera3D");
         _playerData = (PlayerData)FindParent("Node3D").FindChild("Session").FindChild("PlayerData");
+
+        _playerData.OnPlayerConnected(this);
     }
 
     public override void _Process(double delta)
@@ -36,13 +38,13 @@ public partial class Player : RigidBody3D
         {
 
         }
-        else if(Multiplayer.HasMultiplayerPeer())
+        else if(Multiplayer.MultiplayerPeer != null && Multiplayer.MultiplayerPeer.GetUniqueId() == Id)
         {
             RpcId(1, nameof(UpdateServer), Id, Position, Quaternion, LinearVelocity, AngularVelocity);
         }
     }
 
-    [Rpc(MultiplayerApi.RpcMode.AnyPeer)]
+    [Rpc(MultiplayerApi.RpcMode.AnyPeer, TransferMode = MultiplayerPeer.TransferModeEnum.Unreliable)]
     public void UpdateServer(long id, Vector3 position, Quaternion rotation, Vector3 velocity, Vector3 angularVelocity)
     {
         var player = _playerData.Players[id].Player;
@@ -61,6 +63,9 @@ public partial class Player : RigidBody3D
 
     public override void _PhysicsProcess(double delta)
     {
+        if (Multiplayer.MultiplayerPeer.GetUniqueId() != Id)
+            return;
+
         var spaceState = GetWorld3D().DirectSpaceState;
         // use global coordinates, not local to node
         var query = PhysicsRayQueryParameters3D.Create(GlobalPosition, GlobalPosition - (Vector3.One * (1 + 0.1f)));
