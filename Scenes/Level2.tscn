@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://sa47hlufuikj"]
 
-[ext_resource type="PackedScene" path="res://Scenes/round_ramp.tscn" id="1_5txse"]
+[ext_resource type="PackedScene" uid="uid://xv5iojutgohx" path="res://Scenes/round_ramp.tscn" id="1_5txse"]
 [ext_resource type="Script" path="res://Scripts/Spawn.cs" id="2_2kox7"]
 [ext_resource type="Script" path="res://Scripts/WinArea.cs" id="2_2m7iw"]
 
@@ -9,21 +9,38 @@
 [node name="Level2" type="Node3D"]
 
 [node name="RoundRamp" parent="." instance=ExtResource("1_5txse")]
+transform = Transform3D(0.241977, 0, -0.437547, 0, 0.5, 0, 0.437547, 0, 0.241977, 0, 0, -2.47809)
+
+[node name="RoundRamp7" parent="." instance=ExtResource("1_5txse")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 45.9777, 46.0998)
 
 [node name="RoundRamp4" parent="." instance=ExtResource("1_5txse")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.101323, 2.25305, 20.6781)
+transform = Transform3D(0.5, 0, 0, 0, 0.299477, 0.400392, 0, -0.400392, 0.299477, 0.101323, 20.253, 20.6781)
+
+[node name="RoundRamp5" parent="." instance=ExtResource("1_5txse")]
+transform = Transform3D(0.5, 0, 0, 0, 0.299477, 0.400392, 0, -0.400392, 0.299477, 0.101323, 31.9801, 28.9562)
+
+[node name="RoundRamp6" parent="." instance=ExtResource("1_5txse")]
+transform = Transform3D(0.5, 0, 0, 0, 0.299477, 0.400392, 0, -0.400392, 0.299477, 0.101323, 42.3197, 36.7846)
 
 [node name="RoundRamp2" parent="." instance=ExtResource("1_5txse")]
-transform = Transform3D(0.5, 0, 0, 0, 0.482963, 0.12941, 0, -0.12941, 0.482963, 0, 1, 11)
+transform = Transform3D(0.5, 0, 0, 0, 0.482963, 0.12941, 0, -0.12941, 0.482963, 0, 11.92, 11)
 
 [node name="RoundRamp3" parent="." instance=ExtResource("1_5txse")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 5, 2)
+transform = Transform3D(-0.00154024, 0, -0.249995, 0, 0.25, 0, 0.249995, 0, -0.00154024, 12.1228, 0, -3.99483)
+
+[node name="RoundRamp8" parent="." instance=ExtResource("1_5txse")]
+transform = Transform3D(-0.00154024, 0, -0.249995, 0, 0.25, 0, 0.249995, 0, -0.00154024, 22.5635, 0, -3.99483)
+
+[node name="RoundRamp9" parent="." instance=ExtResource("1_5txse")]
+transform = Transform3D(-0.00140557, -0.102234, -0.228136, -0.000629861, 0.228141, -0.102232, 0.249995, 0, -0.00154024, 31.8039, 1.83375, -3.99483)
 
 [node name="WinArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
 script = ExtResource("2_2m7iw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WinArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.0057, 0, -4.02885)
 shape = SubResource("BoxShape3D_3sk3g")
 
 [node name="Label3D" type="Label3D" parent="WinArea"]
@@ -31,6 +48,6 @@ billboard = 1
 text = "Win"
 
 [node name="Spawn" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 49)
 script = ExtResource("2_2kox7")
 Level = 2
