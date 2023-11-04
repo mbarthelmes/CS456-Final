@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://dr2aunc22e5ag"]
+[gd_scene load_steps=17 format=3 uid="uid://dr2aunc22e5ag"]
 
 [ext_resource type="Material" uid="uid://bvlxw2qpfbqpe" path="res://materials/Floor.tres" id="1_ehck2"]
+[ext_resource type="Script" path="res://Scripts/Spawn.cs" id="2_qo8li"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_d0pww"]
 
@@ -128,3 +129,7 @@ surface_material_override/0 = ExtResource("1_ehck2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp&Platform/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_82nm4")
+
+[node name="Spawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 7, 0)
+script = ExtResource("2_qo8li")

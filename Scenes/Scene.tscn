@@ -1,16 +1,21 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkea8podrbdrq"]
+[gd_scene load_steps=16 format=3 uid="uid://bkea8podrbdrq"]
 
+[ext_resource type="PackedScene" uid="uid://d250q6rat0e6b" path="res://Scenes/MainMenu.tscn" id="1_j6cve"]
 [ext_resource type="Script" path="res://Scripts/Camera.cs" id="1_ua35d"]
 [ext_resource type="PackedScene" uid="uid://ohp7d7feq3ch" path="res://Scenes/Session.tscn" id="1_vkqyq"]
 [ext_resource type="PackedScene" uid="uid://ch1npu4nviobg" path="res://Scenes/Player.tscn" id="1_wli8v"]
 [ext_resource type="PackedScene" uid="uid://ct2sb86d3f2ur" path="res://Scenes/Playground.tscn" id="2_j2f0r"]
 [ext_resource type="Texture2D" uid="uid://d34mbcnlh7xtk" path="res://Textures/Sky_Day_BlueSky_Equirect.png" id="3_01xgy"]
 [ext_resource type="PackedScene" uid="uid://dr2aunc22e5ag" path="res://Scenes/Level1.tscn" id="5_2lxkn"]
-[ext_resource type="PackedScene" uid="uid://dhgajiily5hj2" path="res://Scenes/Ramp.tscn" id="6_ld475"]
+[ext_resource type="Script" path="res://Scripts/LoseArea.cs" id="5_3ycx0"]
+[ext_resource type="Script" path="res://Scripts/WinArea.cs" id="5_6frfg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vd03e"]
 friction = 0.5
 bounce = 0.25
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7k4qj"]
+size = Vector3(2, 2, 2)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jfsbe"]
 panorama = ExtResource("3_01xgy")
@@ -28,6 +33,8 @@ ssao_enabled = true
 
 [node name="Node3D" type="Node3D"]
 
+[node name="MainMenu" parent="." instance=ExtResource("1_j6cve")]
+
 [node name="Session" parent="." instance=ExtResource("1_vkqyq")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -36,13 +43,34 @@ current = true
 script = ExtResource("1_ua35d")
 
 [node name="Player" parent="." instance=ExtResource("1_wli8v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -82.55)
 physics_material_override = SubResource("PhysicsMaterial_vd03e")
 continuous_cd = true
 can_sleep = false
 
+[node name="WinArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 0)
+script = ExtResource("5_6frfg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WinArea"]
+shape = SubResource("BoxShape3D_7k4qj")
+
+[node name="Label3D" type="Label3D" parent="WinArea"]
+billboard = 1
+text = "Win"
+
+[node name="LoseArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, 0)
+script = ExtResource("5_3ycx0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LoseArea"]
+shape = SubResource("BoxShape3D_7k4qj")
+
+[node name="Label3D" type="Label3D" parent="LoseArea"]
+billboard = 1
+text = "Lose"
+
 [node name="Playground" parent="." instance=ExtResource("2_j2f0r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -82.55)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 79.0093, 10.623, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fvjq4")
@@ -54,6 +82,3 @@ shadow_enabled = true
 
 [node name="Level1" parent="." instance=ExtResource("5_2lxkn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
-
-[node name="Node3D" parent="." instance=ExtResource("6_ld475")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.1562, -1.45266, 0)

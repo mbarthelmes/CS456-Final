@@ -17,6 +17,7 @@ normal_texture = ExtResource("3_eisp6")
 [sub_resource type="SphereMesh" id="SphereMesh_x3lt4"]
 
 [node name="Player" type="RigidBody3D"]
+collision_layer = 3
 script = ExtResource("1_dhlpx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

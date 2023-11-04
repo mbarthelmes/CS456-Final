@@ -5,21 +5,47 @@ using System.Globalization;
 
 public partial class PlayerData : Node
 {
-	public Dictionary<int, PlayerInfo> Players = new Dictionary<int, PlayerInfo>();
+	public Dictionary<long, PlayerInfo> Players = new Dictionary<long, PlayerInfo>();
+	private Levels _levels;
 
-	public void OnPlayerConnected(int id)
+    public override void _Ready()
+    {
+        _levels = (Levels)GetParent().FindChild("Levels");
+    }
+
+    public void OnPlayerConnected(Player player)
 	{
-		Players.TryAdd(id, new PlayerInfo());
+		Players.TryAdd(player.Id, new PlayerInfo(player));
 	}
 
-	public void OnPlayerDisconnected(int id)
+	public void OnPlayerDisconnected(long id)
 	{
-		Players.Remove(id);
+		Players.Remove(id, out PlayerInfo playerInfo);
+		playerInfo.Player.QueueFree();
 	}
+
+	public void OnPlayerCompletedLevel(long id, int level)
+	{
+		Players[id].Levels.Add(level);
+	}
+
+	public void OnPlayerDied(long id, int level)
+	{
+		var player = Players[id].Player;
+		player.Position = _levels.Spawns[level].Position;
+		player.LinearVelocity = Vector3.Zero;
+		player.AngularVelocity = Vector3.Zero;
+    }
 }
 
 public class PlayerInfo
 {
 	public long Score;
-	public int Level;
+	public HashSet<int> Levels = new HashSet<int>();
+	public Player Player;
+
+	public PlayerInfo(Player player)
+	{
+		Player = player;
+	}
 }
