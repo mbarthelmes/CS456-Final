@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ct2sb86d3f2ur"]
+[gd_scene load_steps=4 format=3 uid="uid://ct2sb86d3f2ur"]
+
+[ext_resource type="Material" uid="uid://bvlxw2qpfbqpe" path="res://materials/Floor.tres" id="1_iccmp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bof61"]
 
@@ -9,6 +11,7 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.06372, 0, 0, 0, 1, 0, 0, 0, 3.29004, 0, -1, 0)
+material_override = ExtResource("1_iccmp")
 mesh = SubResource("BoxMesh_bof61")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]

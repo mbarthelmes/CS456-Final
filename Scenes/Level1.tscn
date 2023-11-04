@@ -1,4 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://dr2aunc22e5ag"]
+[gd_scene load_steps=16 format=3 uid="uid://dr2aunc22e5ag"]
+
+[ext_resource type="Material" uid="uid://bvlxw2qpfbqpe" path="res://materials/Floor.tres" id="1_ehck2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_d0pww"]
 
@@ -47,6 +49,7 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 [node name="Base" type="MeshInstance3D" parent="."]
 transform = Transform3D(250, 0, 0, 0, 5, 0, 0, 0, 250, -0.0131083, 0.107919, -0.171253)
 mesh = SubResource("BoxMesh_d0pww")
+surface_material_override/0 = ExtResource("1_ehck2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Base"]
 
@@ -55,6 +58,7 @@ shape = SubResource("ConcavePolygonShape3D_uo81u")
 
 [node name="Column1" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -88.7284, 12.3368, 90.0923)
+material_override = ExtResource("1_ehck2")
 mesh = SubResource("CylinderMesh_wc8dr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Column1"]
@@ -64,6 +68,7 @@ shape = SubResource("ConcavePolygonShape3D_nfgdb")
 
 [node name="Column2" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 88.5484, 12.3368, 93.9788)
+material_override = ExtResource("1_ehck2")
 mesh = SubResource("CylinderMesh_wc8dr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Column2"]
@@ -73,6 +78,7 @@ shape = SubResource("ConcavePolygonShape3D_pq38e")
 
 [node name="Column3" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -88.7284, 12.3368, -81.3549)
+material_override = ExtResource("1_ehck2")
 mesh = SubResource("CylinderMesh_wc8dr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Column3"]
@@ -82,6 +88,7 @@ shape = SubResource("ConcavePolygonShape3D_f7nxc")
 
 [node name="Column4" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 88.5484, 12.3368, -77.4684)
+material_override = ExtResource("1_ehck2")
 mesh = SubResource("CylinderMesh_wc8dr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Column4"]
@@ -105,6 +112,7 @@ multimesh = SubResource("MultiMesh_kavw6")
 [node name="Ramp&Platform" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 3, 0, 0, 0, 5, 0, 4, -5)
 mesh = SubResource("PrismMesh_2358c")
+surface_material_override/0 = ExtResource("1_ehck2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ramp&Platform"]
 
@@ -114,6 +122,7 @@ shape = SubResource("ConcavePolygonShape3D_5fljs")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ramp&Platform"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 mesh = SubResource("BoxMesh_iprwo")
+surface_material_override/0 = ExtResource("1_ehck2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ramp&Platform/MeshInstance3D"]
 
