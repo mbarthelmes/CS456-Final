@@ -55,6 +55,7 @@ can_sleep = false
 [node name="WinArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 0)
 script = ExtResource("5_6frfg")
+NextLevel = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WinArea"]
 shape = SubResource("BoxShape3D_gmdnl")
