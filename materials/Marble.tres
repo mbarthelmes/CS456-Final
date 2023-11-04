@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c8ug2yd1h2hl1"]
+
+[ext_resource type="Texture2D" uid="uid://ckm8aiv7i51xg" path="res://Textures/Marble.jpg" id="1_hg5wk"]
+[ext_resource type="Texture2D" uid="uid://b1u2tduow6uk5" path="res://Textures/Normal.jpg" id="2_j8isq"]
+
+[resource]
+albedo_texture = ExtResource("1_hg5wk")
+metallic = 0.1
+roughness = 0.5
+normal_enabled = true
+normal_scale = 0.25
+normal_texture = ExtResource("2_j8isq")

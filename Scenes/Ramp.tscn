@@ -1,32 +1,56 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhgajiily5hj2"]
+[gd_scene load_steps=6 format=3 uid="uid://dhgajiily5hj2"]
 
 [ext_resource type="PackedScene" uid="uid://ct2sb86d3f2ur" path="res://Scenes/Playground.tscn" id="1_etlq1"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_wvb6k"]
 left_to_right = 0.0
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_r47sh"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_srf0d"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_q6ddg"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Node3D2" type="Node3D"]
 
 [node name="Playground10" parent="." instance=ExtResource("1_etlq1")]
-transform = Transform3D(-0.999768, 0, 0.0473784, 0, 1, 0, -0.0215357, 0, -2.19949, -19.8251, 4.4136, 21.9226)
+transform = Transform3D(-0.999768, 0, 0.0473784, 0, 1, 0, -0.0215357, 0, -2.19949, -19.8251, 1.65985, 21.9226)
 
 [node name="Ramp8" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0861385, -0.000227321, 3.99907, 0.0402117, 1.04995, -1.68653e-09, -3.99887, 0.0105531, 0.0861428, -19.7257, 3.39347, 16.3089)
+transform = Transform3D(0.0861385, -0.000227321, 3.99907, 0.0402117, 1.04995, -1.68653e-09, -3.99887, 0.0105531, 0.0861428, -19.7257, 0.639724, 16.3089)
 mesh = SubResource("PrismMesh_wvb6k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ramp8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp8/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_r47sh")
 
 [node name="Playground11" parent="." instance=ExtResource("1_etlq1")]
-transform = Transform3D(-0.999768, 0, 0.0215357, 0, 1, 0, -0.0215357, 0, -0.999768, -19.8682, 5.41024, 23.9233)
+transform = Transform3D(-0.999768, 0, 0.0215357, 0, 1, 0, -0.0215357, 0, -0.999768, -19.8682, 2.65649, 23.9233)
 
 [node name="Ramp9" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0861385, -0.000227321, 3.99907, 0.0402117, 1.04995, -1.68653e-09, -3.99887, 0.0105531, 0.0861428, -19.8136, 4.41643, 20.2779)
+transform = Transform3D(0.0861385, -0.000227321, 3.99907, 0.0402117, 1.04995, -1.68653e-09, -3.99887, 0.0105531, 0.0861428, -19.8136, 1.66268, 20.2779)
 mesh = SubResource("PrismMesh_wvb6k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ramp9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp9/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_srf0d")
 
 [node name="Playground12" parent="." instance=ExtResource("1_etlq1")]
-transform = Transform3D(0.0118399, 0, -0.99989, 0, 1, 0, 0.799912, 0, 0.0147999, -12.2584, 6.38243, 23.9215)
+transform = Transform3D(0.0118399, 0, -0.99989, 0, 1, 0, 0.799912, 0, 0.0147999, -12.2584, 3.62868, 23.9215)
 
 [node name="Playground13" parent="." instance=ExtResource("1_etlq1")]
-transform = Transform3D(0.0118399, 0, -2.44973, 0, 2, 0, 0.799912, 0, 0.0362597, -14.603, 5.88854, 23.871)
+transform = Transform3D(0.0118399, 0, -2.44973, 0, 2, 0, 0.799912, 0, 0.0362597, -14.603, 3.13479, 23.871)
 
 [node name="Ramp10" type="MeshInstance3D" parent="."]
-transform = Transform3D(-3.99936, 0.0105544, -0.0480993, 0.0402117, 1.04995, 1.1449e-09, 0.0591965, -0.000156221, -3.24964, -15.8821, 5.3879, 23.9461)
+transform = Transform3D(-3.99936, 0.0105544, -0.0480993, 0.0402117, 1.04995, 1.1449e-09, 0.0591965, -0.000156221, -3.24964, -15.8821, 2.63415, 23.9461)
 mesh = SubResource("PrismMesh_wvb6k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ramp10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp10/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_q6ddg")
