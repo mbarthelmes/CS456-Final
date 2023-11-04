@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://c7au6votussoo"]
+[gd_scene load_steps=3 format=3 uid="uid://c7au6votussoo"]
 
-[node name="YcpCollectible" type="Node3D"]
+[ext_resource type="Texture2D" uid="uid://u37bs5v7hq87" path="res://Textures/ycp_hacks.png" id="1_6atkx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vvl7i"]
+
+[node name="YcpCollectible" type="Area3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.467406, 0)
+billboard = 2
+texture = ExtResource("1_6atkx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0925374, 0.514454, 0.00599289)
+shape = SubResource("SphereShape3D_vvl7i")
