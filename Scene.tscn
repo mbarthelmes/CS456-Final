@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkea8podrbdrq"]
+[gd_scene load_steps=3 format=3 uid="uid://bkea8podrbdrq"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_k53k7"]
+[ext_resource type="PackedScene" uid="uid://ch1npu4nviobg" path="res://Scenes/Player.tscn" id="1_wli8v"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sbuwf"]
 
 [node name="Node3D" type="Node3D"]
 
+[node name="Player" parent="." instance=ExtResource("1_wli8v")]
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_k53k7")
+transform = Transform3D(4.06372, 0, 0, 0, 1, 0, 0, 0, 3.29004, 0, -1, 0)
+mesh = SubResource("BoxMesh_sbuwf")
