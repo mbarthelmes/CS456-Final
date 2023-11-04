@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bkea8podrbdrq"]
+[gd_scene load_steps=19 format=3 uid="uid://bkea8podrbdrq"]
 
 [ext_resource type="PackedScene" uid="uid://d250q6rat0e6b" path="res://Scenes/MainMenu.tscn" id="1_j6cve"]
 [ext_resource type="Script" path="res://Scripts/Camera.cs" id="1_ua35d"]
@@ -9,13 +9,18 @@
 [ext_resource type="PackedScene" uid="uid://dr2aunc22e5ag" path="res://Scenes/Level1.tscn" id="5_2lxkn"]
 [ext_resource type="Script" path="res://Scripts/LoseArea.cs" id="5_3ycx0"]
 [ext_resource type="Script" path="res://Scripts/WinArea.cs" id="5_6frfg"]
+[ext_resource type="PackedScene" uid="uid://b48bo6os0bena" path="res://Scenes/Level2.tscn" id="10_2j3s3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vd03e"]
 friction = 0.5
 bounce = 0.25
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmdnl"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_7k4qj"]
-size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5yvj4"]
+size = Vector3(1000, 10, 1000)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jfsbe"]
 panorama = ExtResource("3_01xgy")
@@ -50,9 +55,10 @@ can_sleep = false
 [node name="WinArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 0)
 script = ExtResource("5_6frfg")
+NextLevel = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WinArea"]
-shape = SubResource("BoxShape3D_7k4qj")
+shape = SubResource("BoxShape3D_gmdnl")
 
 [node name="Label3D" type="Label3D" parent="WinArea"]
 billboard = 1
@@ -69,8 +75,19 @@ shape = SubResource("BoxShape3D_7k4qj")
 billboard = 1
 text = "Lose"
 
+[node name="GlobalLoseArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -200, 0)
+script = ExtResource("5_3ycx0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GlobalLoseArea"]
+shape = SubResource("BoxShape3D_5yvj4")
+
+[node name="Label3D" type="Label3D" parent="GlobalLoseArea"]
+billboard = 1
+text = "Lose"
+
 [node name="Playground" parent="." instance=ExtResource("2_j2f0r")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 79.0093, 10.623, 0)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 23.1096, 10.623, -39)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fvjq4")
@@ -82,3 +99,6 @@ shadow_enabled = true
 
 [node name="Level1" parent="." instance=ExtResource("5_2lxkn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="Level2" parent="." instance=ExtResource("10_2j3s3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 20, 31)

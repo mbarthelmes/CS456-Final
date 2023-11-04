@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://b48bo6os0bena"]
+
+[ext_resource type="PackedScene" uid="uid://ba7d2yrfjkp2r" path="res://Scenes/round_ramp.tscn" id="1_5txse"]
+[ext_resource type="Script" path="res://Scripts/Spawn.cs" id="2_2kox7"]
+[ext_resource type="Script" path="res://Scripts/WinArea.cs" id="2_2m7iw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3sk3g"]
+
+[node name="Level2" type="Node3D"]
+
+[node name="RoundRamp" parent="." instance=ExtResource("1_5txse")]
+
+[node name="RoundRamp4" parent="." instance=ExtResource("1_5txse")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.101323, 2.25305, 20.6781)
+
+[node name="RoundRamp2" parent="." instance=ExtResource("1_5txse")]
+transform = Transform3D(0.5, 0, 0, 0, 0.482963, 0.12941, 0, -0.12941, 0.482963, 0, 1, 11)
+
+[node name="RoundRamp3" parent="." instance=ExtResource("1_5txse")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 5, 2)
+
+[node name="WinArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+script = ExtResource("2_2m7iw")
+NextLevel = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WinArea"]
+shape = SubResource("BoxShape3D_3sk3g")
+
+[node name="Label3D" type="Label3D" parent="WinArea"]
+billboard = 1
+text = "Win"
+
+[node name="Spawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("2_2kox7")
+Level = 2

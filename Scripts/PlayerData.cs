@@ -24,10 +24,19 @@ public partial class PlayerData : Node
 		playerInfo.Player.QueueFree();
 	}
 
-	public void OnPlayerCompletedLevel(long id, int level)
+	public void OnPlayerCompletedLevel(long id, int level, int nextLevel)
 	{
-		Players[id].Levels.Add(level);
-	}
+        var player = Players[id].Player;
+        Players[id].Levels.Add(level);
+        player.Position = _levels.Spawns[nextLevel].GlobalPosition;
+        player.LinearVelocity = Vector3.Zero;
+        player.AngularVelocity = Vector3.Zero;
+    }
+
+	public void OnCollectableCollected(long id)
+	{
+		Players[id].Score++;
+    }
 
 	public void OnPlayerDied(long id, int level)
 	{

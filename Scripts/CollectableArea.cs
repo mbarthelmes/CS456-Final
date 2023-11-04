@@ -1,14 +1,8 @@
 using Godot;
 using System;
 
-public partial class WinArea : Area3D
+public partial class CollectableArea : Area3D
 {
-    [Export]
-    public int Level;
-
-    [Export]
-    public int NextLevel;
-
     private PlayerData _playerData;
 
     // Called when the node enters the scene tree for the first time.
@@ -22,8 +16,8 @@ public partial class WinArea : Area3D
     {
         if(body is Player player)
         {
-            _playerData.OnPlayerCompletedLevel(player.Id, Level, NextLevel);
-            GD.Print($"Player {player.Id} completed level {Level}. Next level: {NextLevel}");
+            _playerData.OnCollectableCollected(player.Id);
+            QueueFree();
         }
     }
 
