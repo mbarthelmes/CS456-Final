@@ -247,14 +247,34 @@ mesh = SubResource("PrismMesh_wh1b0")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tri R/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_6qyfa")
 
-[node name="SpawnPlatform" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 0.5, 0, 0, 0, 2, -2.59463, -0.0531819, 3)
+[node name="Box R" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.1, 0, 0, 0, 0.5, 0, 0, 0, 2, -1.79367, -0.0531819, 3)
 material_override = ExtResource("1_iccmp")
 mesh = SubResource("BoxMesh_gsgox")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SpawnPlatform"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Box R"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnPlatform/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box R/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ntc27")
+
+[node name="Tri L" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 1.5, 0, 0, 0, 2, -5.844, -0.551, -3)
+material_override = ExtResource("1_iccmp")
+mesh = SubResource("PrismMesh_wh1b0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tri L"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tri L/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_6qyfa")
+
+[node name="Box L" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.1, 0, 0, 0, 0.5, 0, 0, 0, 2, -1.794, -0.053, -3)
+material_override = ExtResource("1_iccmp")
+mesh = SubResource("BoxMesh_gsgox")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Box L"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box L/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ntc27")
 
 [node name="Spawn" type="MeshInstance3D" parent="."]
@@ -301,8 +321,38 @@ mesh = SubResource("CylinderMesh_mkc0i")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cyl R 3/StaticBody3D"]
 shape = SubResource("CylinderShape3D_k4hi0")
 
+[node name="Cyl L 1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, -14.737, -2.996, -3.011)
+material_override = ExtResource("4_i7psu")
+mesh = SubResource("CylinderMesh_mkc0i")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cyl L 1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cyl L 1/StaticBody3D"]
+shape = SubResource("CylinderShape3D_aateb")
+
+[node name="Cyl L 2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, -12.64, -2.75, -3.011)
+material_override = ExtResource("4_i7psu")
+mesh = SubResource("CylinderMesh_mkc0i")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cyl L 2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cyl L 2/StaticBody3D"]
+shape = SubResource("CylinderShape3D_ylt62")
+
+[node name="Cyl L 3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, -10.235, -2.387, -3.011)
+material_override = ExtResource("4_i7psu")
+mesh = SubResource("CylinderMesh_mkc0i")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cyl L 3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cyl L 3/StaticBody3D"]
+shape = SubResource("CylinderShape3D_k4hi0")
+
 [node name="Cyl C" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 0.25, 0, 0, 0, 1.5, -10.235, 0, 0)
+transform = Transform3D(1.5, 0, 0, 0, 0.25, 0, 0, 0, 3, -1.52414, 0.250948, 0)
 material_override = ExtResource("4_i7psu")
 mesh = SubResource("CylinderMesh_mkc0i")
 
