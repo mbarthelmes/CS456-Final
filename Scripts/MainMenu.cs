@@ -12,7 +12,9 @@ public partial class MainMenu : Node2D
     private Button _connect;
     private Button _host;
     private Button _join;
+    private Button _settings;
 	private Button _exit;
+    private Button _playerSubMenuBack;
 
     private TextEdit _textEdit;
     private Button _joinSubMenuBack;
@@ -40,10 +42,23 @@ public partial class MainMenu : Node2D
         _rootMenu = (Control)FindChild("RootMenu");
         _rootMenu.Visible = true;
 
+        _settings = (Button)FindChild("Settings");
+        _settings.Pressed += _settings_Pressed;
+
         _joinSubMenuBack = (Button)_joinSubmenu.FindChild("Back");
         _joinSubMenuBack.Pressed += _joinSubMenuBack_Pressed;
 
-        _playerSubMenu = (Button)_playerSubMenu.FindChild("SettingsSubMenu");
+        _playerSubMenu = (Control)FindChild("SettingsSubMenu");
+        _playerSubMenu.Visible = false;
+
+        _playerSubMenuBack = (Button)_playerSubMenu.FindChild("Back");
+        _playerSubMenuBack.Pressed += _joinSubMenuBack_Pressed;
+    }
+
+    private void _settings_Pressed()
+    {
+        _playerSubMenu.Visible = true;
+        _rootMenu.Visible = false;
     }
 
     private void _connect_Pressed()
@@ -77,6 +92,7 @@ public partial class MainMenu : Node2D
     private void _joinSubMenuBack_Pressed()
     {
         _joinSubmenu.Visible = false;
+        _playerSubMenu.Visible = false;
         _rootMenu.Visible = true;
     }
 
