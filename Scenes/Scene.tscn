@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://bkea8podrbdrq"]
+[gd_scene load_steps=16 format=3 uid="uid://bkea8podrbdrq"]
 
+[ext_resource type="PackedScene" uid="uid://d250q6rat0e6b" path="res://Scenes/MainMenu.tscn" id="1_j6cve"]
 [ext_resource type="Script" path="res://Scripts/Camera.cs" id="1_ua35d"]
 [ext_resource type="PackedScene" uid="uid://ohp7d7feq3ch" path="res://Scenes/Session.tscn" id="1_vkqyq"]
 [ext_resource type="PackedScene" uid="uid://ch1npu4nviobg" path="res://Scenes/Player.tscn" id="1_wli8v"]
@@ -31,6 +32,8 @@ ssao_enabled = true
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_oyjd2"]
 
 [node name="Node3D" type="Node3D"]
+
+[node name="MainMenu" parent="." instance=ExtResource("1_j6cve")]
 
 [node name="Session" parent="." instance=ExtResource("1_vkqyq")]
 
