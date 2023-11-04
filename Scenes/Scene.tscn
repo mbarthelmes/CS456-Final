@@ -64,19 +64,6 @@ shape = SubResource("BoxShape3D_gmdnl")
 billboard = 1
 text = "Win"
 
-[node name="Teleportlevel2" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89603, 2.2755, -4.73775)
-script = ExtResource("5_6frfg")
-NextLevel = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleportlevel2"]
-shape = SubResource("BoxShape3D_gmdnl")
-
-[node name="Label3D" type="Label3D" parent="Teleportlevel2"]
-billboard = 1
-text = "TeleportLevel2
-"
-
 [node name="LoseArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, 0)
 script = ExtResource("5_3ycx0")
