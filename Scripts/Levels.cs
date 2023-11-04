@@ -14,6 +14,7 @@ public partial class Levels : Node
 			if(node is Spawn spawn)
 			{
 				Spawns.Add(spawn.Level, spawn);
+				GD.Print($"Found level spawn: {spawn.Level}");
 			}
 		}
 	}

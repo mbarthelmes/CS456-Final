@@ -23,7 +23,7 @@ public partial class WinArea : Area3D
         if(body is Player player)
         {
             _playerData.OnPlayerCompletedLevel(player.Id, Level, NextLevel);
-            GD.Print($"Player {player.Id} completed level {Level}");
+            GD.Print($"Player {player.Id} completed level {Level}. Next level: {NextLevel}");
         }
     }
 

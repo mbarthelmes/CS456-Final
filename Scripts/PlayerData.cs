@@ -28,7 +28,7 @@ public partial class PlayerData : Node
 	{
         var player = Players[id].Player;
         Players[id].Levels.Add(level);
-        player.Position = _levels.Spawns[nextLevel].Position;
+        player.Position = _levels.Spawns[nextLevel].GlobalPosition;
         player.LinearVelocity = Vector3.Zero;
         player.AngularVelocity = Vector3.Zero;
     }
