@@ -30,9 +30,5 @@ public partial class Camera : Camera3D
 
             _rotationY = Mathf.Clamp(_rotationY, -Mathf.Pi / 2 + 0.01f, Mathf.Pi / 2 - 0.01f);
         }
-
     }
-
-
-
 }
