@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkea8podrbdrq"]
+[gd_scene load_steps=10 format=3 uid="uid://bkea8podrbdrq"]
 
+[ext_resource type="Script" path="res://Scripts/Camera.cs" id="1_ua35d"]
 [ext_resource type="PackedScene" uid="uid://ch1npu4nviobg" path="res://Scenes/Player.tscn" id="1_wli8v"]
 [ext_resource type="PackedScene" uid="uid://ct2sb86d3f2ur" path="res://Scenes/Playground.tscn" id="2_j2f0r"]
 [ext_resource type="Texture2D" uid="uid://d34mbcnlh7xtk" path="res://Textures/Sky_Day_BlueSky_Equirect.png" id="3_01xgy"]
@@ -25,6 +26,7 @@ sky = SubResource("Sky_e110a")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6.39026)
+script = ExtResource("1_ua35d")
 
 [node name="Player" parent="." instance=ExtResource("1_wli8v")]
 physics_material_override = SubResource("PhysicsMaterial_vd03e")

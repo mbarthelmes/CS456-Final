@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://ch1npu4nviobg"]
+[gd_scene load_steps=6 format=3 uid="uid://ch1npu4nviobg"]
 
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_dhlpx"]
+[ext_resource type="Texture2D" uid="uid://ckm8aiv7i51xg" path="res://Textures/Marble.jpg" id="2_7sq16"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_miq2w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p1xn5"]
+albedo_texture = ExtResource("2_7sq16")
 
 [sub_resource type="SphereMesh" id="SphereMesh_x3lt4"]
 
@@ -13,4 +17,5 @@ script = ExtResource("1_dhlpx")
 shape = SubResource("SphereShape3D_miq2w")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_p1xn5")
 mesh = SubResource("SphereMesh_x3lt4")
