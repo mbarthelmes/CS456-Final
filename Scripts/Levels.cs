@@ -1,6 +1,6 @@
 using Godot;
-using Godot.Collections;
 using System;
+using System.Collections.Generic;
 
 public partial class Levels : Node
 {
@@ -9,13 +9,20 @@ public partial class Levels : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		foreach (var node in FindParent("Node3D").FindChildren("Spawn"))
-		{
-			if(node is Spawn spawn)
-			{
-				Spawns.Add(spawn.Level, spawn);
-				GD.Print($"Found level spawn: {spawn.Level}");
-			}
-		}
-	}
+        IterateChildren(FindParent("Node3D"));
+
+        void IterateChildren(Node node)
+        {
+            foreach (var child in node.GetChildren())
+            {
+                IterateChildren(child);
+            }
+
+            if (node is Spawn spawn)
+            {
+                Spawns[spawn.Level] = spawn;
+                GD.Print($"Found level spawn: {spawn.Level}");
+            }
+        }
+    }
 }

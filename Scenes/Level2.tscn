@@ -8,6 +8,11 @@
 
 [node name="Level2" type="Node3D"]
 
+[node name="Spawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 49)
+script = ExtResource("2_2kox7")
+Level = 2
+
 [node name="RoundRamp" parent="." instance=ExtResource("1_5txse")]
 transform = Transform3D(0.241977, 0, -0.437547, 0, 0.5, 0, 0.437547, 0, 0.241977, 0, 0, -2.47809)
 
@@ -46,8 +51,3 @@ shape = SubResource("BoxShape3D_3sk3g")
 [node name="Label3D" type="Label3D" parent="WinArea"]
 billboard = 1
 text = "Win"
-
-[node name="Spawn" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 49)
-script = ExtResource("2_2kox7")
-Level = 2
