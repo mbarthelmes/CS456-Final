@@ -17,7 +17,96 @@ mesh = ExtResource("1_2g30v")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoundRamp/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_k5pyd")
 
+[node name="RoundRamp2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.499307, -0.0263248, 0, 0.0263248, 0.499307, 0, -0.26626, 9.90078)
+mesh = ExtResource("1_2g30v")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoundRamp2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoundRamp2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_k5pyd")
+
+[node name="RoundRamp2" type="MeshInstance3D" parent="RoundRamp2"]
+transform = Transform3D(1, 0, 0, 0, 0.998613, -0.0526497, 0, 0.0526497, 0.998613, 0, -0.532521, 19.8016)
+mesh = ExtResource("1_2g30v")
+skeleton = NodePath("../../RoundRamp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoundRamp2/RoundRamp2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoundRamp2/RoundRamp2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_k5pyd")
+
+[node name="RoundRamp2" type="MeshInstance3D" parent="RoundRamp2/RoundRamp2"]
+transform = Transform3D(1, 0, 0, 0, 0.998613, -0.0526497, 0, 0.0526497, 0.998613, 0, -0.532521, 19.8016)
+mesh = ExtResource("1_2g30v")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoundRamp2/RoundRamp2/RoundRamp2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_k5pyd")
+
+[node name="RoundRamp2" type="MeshInstance3D" parent="RoundRamp2/RoundRamp2/RoundRamp2"]
+transform = Transform3D(1, 0, 0, 0, 0.998613, -0.0526497, 0, 0.0526497, 0.998613, 0, -0.532521, 19.8016)
+mesh = ExtResource("1_2g30v")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_k5pyd")
+
+[node name="RoundRamp2" type="MeshInstance3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2"]
+transform = Transform3D(1, 0, 0, 0, 0.998613, -0.0526497, 0, 0.0526497, 0.998613, 0, -0.532521, 19.8016)
+mesh = ExtResource("1_2g30v")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_k5pyd")
+
+[node name="RoundRamp2" type="MeshInstance3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2"]
+transform = Transform3D(1, 0, 0, 0, 0.998613, -0.0526497, 0, 0.0526497, 0.998613, 0, -0.532521, 19.8016)
+mesh = ExtResource("1_2g30v")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_k5pyd")
+
+[node name="RoundRamp2" type="MeshInstance3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2"]
+transform = Transform3D(1, 0, 0, 0, 0.998613, -0.0526497, 0, 0.0526497, 0.998613, 0, -0.532521, 19.8016)
+mesh = ExtResource("1_2g30v")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_k5pyd")
+
+[node name="RoundRamp2" type="MeshInstance3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2"]
+transform = Transform3D(1, 0, 0, 0, 0.998613, -0.0526497, 0, 0.0526497, 0.998613, 0, -0.532521, 19.8016)
+mesh = ExtResource("1_2g30v")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_k5pyd")
+
+[node name="RoundRamp2" type="MeshInstance3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2"]
+transform = Transform3D(1, 0, 0, 0, 0.998613, -0.0526497, 0, 0.0526497, 0.998613, 0, -0.532521, 19.8016)
+mesh = ExtResource("1_2g30v")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/RoundRamp2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_k5pyd")
+
 [node name="Spawn" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 script = ExtResource("2_2kox7")
-Level = 1
+Level = 2

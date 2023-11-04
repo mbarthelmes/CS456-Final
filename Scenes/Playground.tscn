@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=3 uid="uid://ct2sb86d3f2ur"]
 
 [ext_resource type="Material" uid="uid://bvlxw2qpfbqpe" path="res://materials/Floor.tres" id="1_iccmp"]
-[ext_resource type="Material" uid="uid://7hbndkh8fuhy" path="res://materials/Window.tres" id="2_62y4w"]
-[ext_resource type="Material" uid="uid://cpkshxty6858o" path="res://materials/Tube.tres" id="3_lm73x"]
+[ext_resource type="Material" path="res://materials/Window.tres" id="2_62y4w"]
+[ext_resource type="Material" path="res://materials/Tube.tres" id="3_lm73x"]
 [ext_resource type="Script" path="res://Scripts/Spawn.cs" id="4_gd33t"]
 [ext_resource type="Material" uid="uid://boshlmtebhgh5" path="res://materials/Floor2.tres" id="4_i7psu"]
 
@@ -205,27 +205,27 @@ mesh = SubResource("PrismMesh_wh1b0")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tri 3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_6qyfa")
 
-[node name="Spawn" type="MeshInstance3D" parent="."]
+[node name="SpawnPlatform" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, -18.0209, -2.73429, 0)
 material_override = ExtResource("1_iccmp")
 mesh = SubResource("BoxMesh_gsgox")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Spawn"]
+[node name="StaticBody3D" type="StaticBody3D" parent="SpawnPlatform"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Spawn/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnPlatform/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ntc27")
 
-[node name="SpawnPoint" type="MeshInstance3D" parent="."]
+[node name="Spawn" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -18.0209, -1.33571, 0)
 material_override = ExtResource("1_iccmp")
 transparency = 1.0
 mesh = SubResource("BoxMesh_gsgox")
 script = ExtResource("4_gd33t")
-Level = 2
+Level = 1
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SpawnPoint"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Spawn"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnPoint/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Spawn/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ntc27")
 disabled = true
 
