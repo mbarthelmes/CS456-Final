@@ -32,8 +32,6 @@ public partial class MainMenu : Node2D
         _joinSubmenu = (Control)FindChild("JoinSubMenu");
         _joinSubmenu.Visible = false;
 
-
-
         _rootMenu = (Control)FindChild("RootMenu");
         _rootMenu.Visible = true;
 
@@ -45,6 +43,13 @@ public partial class MainMenu : Node2D
     private void _connect_Pressed()
     {
         ((ClientServer)FindParent("Node3D").FindChild("Session").FindChild("ClientServer")).Join("127.0.0.1");
+        Multiplayer.ConnectedToServer += Multiplayer_ConnectedToServer;
+    }
+
+    private void Multiplayer_ConnectedToServer()
+    {
+        Visible = false;
+        Multiplayer.ConnectedToServer -= Multiplayer_ConnectedToServer;
     }
 
     private void _host_Pressed()
