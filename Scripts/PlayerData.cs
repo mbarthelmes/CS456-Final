@@ -16,10 +16,21 @@ public partial class PlayerData : Node
 	{
 		Players.Remove(id);
 	}
+
+	public void OnPlayerCompletedLevel(int id, int level)
+	{
+		Players[id].Levels.Add(level);
+	}
+
+	public void OnPlayerDied(int id, int level)
+	{
+		//TODO telelportat the character at a position and reset velocities
+		//Get the position they should teleport to using the level they died in
+	}
 }
 
 public class PlayerInfo
 {
 	public long Score;
-	public int Level;
+	public HashSet<int> Levels = new HashSet<int>();
 }
