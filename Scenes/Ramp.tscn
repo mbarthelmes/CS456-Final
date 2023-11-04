@@ -1,73 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx2532212su2y"]
+[gd_scene load_steps=3 format=3 uid="uid://dhgajiily5hj2"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Playground.tscn" id="1_etlq1"]
+[ext_resource type="PackedScene" uid="uid://ct2sb86d3f2ur" path="res://Scenes/Playground.tscn" id="1_etlq1"]
 
-[sub_resource type="PrismMesh" id="PrismMesh_3n6hh"]
+[sub_resource type="PrismMesh" id="PrismMesh_wvb6k"]
 left_to_right = 0.0
 
 [node name="Node3D" type="Node3D"]
-
-[node name="Playground2" parent="." instance=ExtResource("1_etlq1")]
-transform = Transform3D(1, 0, -0.000499163, 0, 1, 0, 0.000226893, 0, 2.2, -1.14441e-05, 1.53416, -4.30395)
-
-[node name="Ramp2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.000907689, 2.39498e-06, -4, 0.0402117, 1.04995, -1.71133e-09, 3.9998, -0.0105556, -0.000907741, 0.0202518, 0.514033, 1.31054)
-mesh = SubResource("PrismMesh_3n6hh")
-
-[node name="Playground3" parent="." instance=ExtResource("1_etlq1")]
-transform = Transform3D(1, 0, -0.000226893, 0, 1, 0, 0.000226893, 0, 1, 0.000442743, 2.5308, -6.30518)
-
-[node name="Ramp3" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.000907689, 2.39498e-06, -4, 0.0402117, 1.04995, -1.71133e-09, 3.9998, -0.0105556, -0.000907741, 0.0235803, 1.537, -2.65945)
-mesh = SubResource("PrismMesh_3n6hh")
-
-[node name="Playground4" parent="." instance=ExtResource("1_etlq1")]
-transform = Transform3D(-0.0288824, 0, 0.999348, 0, 1, 0, -0.799478, 0, -0.036103, -7.60759, 3.503, -6.14118)
-
-[node name="Playground5" parent="." instance=ExtResource("1_etlq1")]
-transform = Transform3D(-0.0288824, 0, 2.4484, 0, 2, 0, -0.799478, 0, -0.0884524, -5.26237, 3.00911, -6.14071)
-
-[node name="Ramp4" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.99719, -0.0105487, 0.117335, 0.0402117, 1.04995, -1.03051e-09, -0.144404, 0.000381088, 3.24788, -3.98523, 2.50847, -6.24304)
-mesh = SubResource("PrismMesh_3n6hh")
-
-[node name="Playground6" parent="." instance=ExtResource("1_etlq1")]
-transform = Transform3D(-0.999768, 0, 0.0473784, 0, 1, 0, -0.0215357, 0, -2.19949, -18.4815, 1.53522, -7.99891)
-
-[node name="Ramp5" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0861385, -0.000227321, 3.99907, 0.0402117, 1.04995, -1.68653e-09, -3.99887, 0.0105531, 0.0861428, -18.3821, 0.515088, -13.6125)
-mesh = SubResource("PrismMesh_3n6hh")
-
-[node name="Playground7" parent="." instance=ExtResource("1_etlq1")]
-transform = Transform3D(-0.999768, 0, 0.0215357, 0, 1, 0, -0.0215357, 0, -0.999768, -18.5246, 2.53186, -5.99814)
-
-[node name="Ramp6" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0861385, -0.000227321, 3.99907, 0.0402117, 1.04995, -1.68653e-09, -3.99887, 0.0105531, 0.0861428, -18.47, 1.53805, -9.64353)
-mesh = SubResource("PrismMesh_3n6hh")
-
-[node name="Playground8" parent="." instance=ExtResource("1_etlq1")]
-transform = Transform3D(0.0118399, 0, -0.99989, 0, 1, 0, 0.799912, 0, 0.0147999, -10.9147, 3.50405, -5.99998)
-
-[node name="Playground9" parent="." instance=ExtResource("1_etlq1")]
-transform = Transform3D(0.0118399, 0, -2.44973, 0, 2, 0, 0.799912, 0, 0.0362597, -13.2594, 3.01016, -6.05043)
-
-[node name="Ramp7" type="MeshInstance3D" parent="."]
-transform = Transform3D(-3.99936, 0.0105544, -0.0480993, 0.0402117, 1.04995, 1.1449e-09, 0.0591965, -0.000156221, -3.24964, -14.5385, 2.50953, -5.97534)
-mesh = SubResource("PrismMesh_3n6hh")
 
 [node name="Playground10" parent="." instance=ExtResource("1_etlq1")]
 transform = Transform3D(-0.999768, 0, 0.0473784, 0, 1, 0, -0.0215357, 0, -2.19949, -19.8251, 4.4136, 21.9226)
 
 [node name="Ramp8" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0861385, -0.000227321, 3.99907, 0.0402117, 1.04995, -1.68653e-09, -3.99887, 0.0105531, 0.0861428, -19.7257, 3.39347, 16.3089)
-mesh = SubResource("PrismMesh_3n6hh")
+mesh = SubResource("PrismMesh_wvb6k")
 
 [node name="Playground11" parent="." instance=ExtResource("1_etlq1")]
 transform = Transform3D(-0.999768, 0, 0.0215357, 0, 1, 0, -0.0215357, 0, -0.999768, -19.8682, 5.41024, 23.9233)
 
 [node name="Ramp9" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0861385, -0.000227321, 3.99907, 0.0402117, 1.04995, -1.68653e-09, -3.99887, 0.0105531, 0.0861428, -19.8136, 4.41643, 20.2779)
-mesh = SubResource("PrismMesh_3n6hh")
+mesh = SubResource("PrismMesh_wvb6k")
 
 [node name="Playground12" parent="." instance=ExtResource("1_etlq1")]
 transform = Transform3D(0.0118399, 0, -0.99989, 0, 1, 0, 0.799912, 0, 0.0147999, -12.2584, 6.38243, 23.9215)
@@ -77,4 +29,4 @@ transform = Transform3D(0.0118399, 0, -2.44973, 0, 2, 0, 0.799912, 0, 0.0362597,
 
 [node name="Ramp10" type="MeshInstance3D" parent="."]
 transform = Transform3D(-3.99936, 0.0105544, -0.0480993, 0.0402117, 1.04995, 1.1449e-09, 0.0591965, -0.000156221, -3.24964, -15.8821, 5.3879, 23.9461)
-mesh = SubResource("PrismMesh_3n6hh")
+mesh = SubResource("PrismMesh_wvb6k")

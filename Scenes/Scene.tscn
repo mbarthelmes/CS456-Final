@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkea8podrbdrq"]
+[gd_scene load_steps=12 format=3 uid="uid://bkea8podrbdrq"]
 
 [ext_resource type="Script" path="res://Scripts/Camera.cs" id="1_ua35d"]
 [ext_resource type="PackedScene" uid="uid://ch1npu4nviobg" path="res://Scenes/Player.tscn" id="1_wli8v"]
 [ext_resource type="PackedScene" uid="uid://ct2sb86d3f2ur" path="res://Scenes/Playground.tscn" id="2_j2f0r"]
 [ext_resource type="Texture2D" uid="uid://d34mbcnlh7xtk" path="res://Textures/Sky_Day_BlueSky_Equirect.png" id="3_01xgy"]
 [ext_resource type="PackedScene" uid="uid://dr2aunc22e5ag" path="res://Scenes/Level1.tscn" id="5_2lxkn"]
+[ext_resource type="PackedScene" uid="uid://dhgajiily5hj2" path="res://Scenes/Ramp.tscn" id="6_ld475"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vd03e"]
 friction = 0.5
@@ -32,11 +33,13 @@ current = true
 script = ExtResource("1_ua35d")
 
 [node name="Player" parent="." instance=ExtResource("1_wli8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -82.55)
 physics_material_override = SubResource("PhysicsMaterial_vd03e")
 continuous_cd = true
 can_sleep = false
 
 [node name="Playground" parent="." instance=ExtResource("2_j2f0r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -82.55)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fvjq4")
@@ -48,3 +51,6 @@ shadow_enabled = true
 
 [node name="Level1" parent="." instance=ExtResource("5_2lxkn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="Node3D" parent="." instance=ExtResource("6_ld475")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.1562, -1.45266, 0)
