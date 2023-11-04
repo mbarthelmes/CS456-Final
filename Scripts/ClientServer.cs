@@ -62,13 +62,14 @@ public partial class ClientServer : Node
         Rpc(nameof(ServerSetMaterial), id, material);
     }
 
-    [Rpc(MultiplayerApi.RpcMode.AnyPeer)]
+    [Rpc(MultiplayerApi.RpcMode.AnyPeer, CallLocal = true)]
     public void ServerSetMaterial(long id, string material)
     {
+        GD.Print("Server set material");
         Rpc(nameof(UpdateClientMaterial), id, material);
     }
 
-    [Rpc(MultiplayerApi.RpcMode.Authority)]
+    [Rpc(MultiplayerApi.RpcMode.Authority, CallLocal = true)]
     public void UpdateClientMaterial(long id, string material)
     {
         ((MeshInstance3D)_playerData.Players[id].Player.FindChild("MeshInstance3D")).MaterialOverride = ResourceLoader.Load<Material>($"Materials/Marbles/{material}.tres");
