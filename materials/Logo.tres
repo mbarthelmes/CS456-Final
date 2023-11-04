@@ -10,6 +10,6 @@ normal_enabled = true
 normal_scale = 0.5
 normal_texture = ExtResource("2_p7448")
 uv1_scale = Vector3(0.05, 0.05, -0.05)
-uv1_offset = Vector3(0, 0.58, 0.53)
+uv1_offset = Vector3(0, 0.4, 0.53)
 uv1_triplanar = true
 uv1_world_triplanar = true
