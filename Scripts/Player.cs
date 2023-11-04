@@ -23,28 +23,13 @@ public partial class Player : RigidBody3D
     public override void _PhysicsProcess(double delta)
     {
         Quaternion rot = Quaternion.FromEuler(new Vector3(0, (Mathf.Pi * 2) - _camera.Rotation.Y, 0));
-        Vector3 forward = Vector3.Forward * rot;
-        Vector3 right = Vector3.Right * rot;
+        Vector3 input = Vector3.Zero;
 
-        if (Input.IsActionPressed("Forward"))
-        {
-            LinearVelocity = LinearVelocity + forward * (float)delta * Speed;
-        }
+        input.X = Input.GetAxis("Left", "Right");
+        input.Z = Input.GetAxis("Forward", "Backward");
+        input = input.Normalized();
 
-        if (Input.IsActionPressed("Backward"))
-        {
-            LinearVelocity = LinearVelocity - forward * (float)delta * Speed;
-        }
-
-        if (Input.IsActionPressed("Left"))
-        {
-            LinearVelocity = LinearVelocity - right * (float)delta * Speed;
-        }
-
-        if (Input.IsActionPressed("Right"))
-        {
-            LinearVelocity = LinearVelocity + right * (float)delta * Speed;
-        }
+        LinearVelocity = LinearVelocity + (input * rot) * (float)delta * Speed;
 
         if (Input.IsActionPressed("Jump"))
         {
