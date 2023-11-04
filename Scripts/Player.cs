@@ -34,13 +34,16 @@ public partial class Player : RigidBody3D
 
     public override void _Process(double delta)
     {
-        if (Multiplayer.IsServer())
+        if(Multiplayer.MultiplayerPeer != null)
         {
+            if (Multiplayer.IsServer())
+            {
 
-        }
-        else if(Multiplayer.MultiplayerPeer != null && Multiplayer.MultiplayerPeer.GetUniqueId() == Id)
-        {
-            RpcId(1, nameof(UpdateServer), Id, Position, Quaternion, LinearVelocity, AngularVelocity);
+            }
+            else if (Multiplayer.MultiplayerPeer.GetUniqueId() == Id)
+            {
+                RpcId(1, nameof(UpdateServer), Id, Position, Quaternion, LinearVelocity, AngularVelocity);
+            }
         }
     }
 
@@ -63,7 +66,7 @@ public partial class Player : RigidBody3D
 
     public override void _PhysicsProcess(double delta)
     {
-        if (Multiplayer.MultiplayerPeer.GetUniqueId() != Id)
+        if (Multiplayer.MultiplayerPeer != null && Multiplayer.MultiplayerPeer.GetUniqueId() != Id)
             return;
 
         var spaceState = GetWorld3D().DirectSpaceState;

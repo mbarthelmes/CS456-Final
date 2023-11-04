@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://boshlmtebhgh5"]
+
+[ext_resource type="Texture2D" uid="uid://3ntbtln32nm2" path="res://Textures/grid_warm2.PNG" id="1_epcgk"]
+[ext_resource type="Texture2D" uid="uid://b1u2tduow6uk5" path="res://Textures/Normal.jpg" id="2_g8kq4"]
+
+[resource]
+albedo_texture = ExtResource("1_epcgk")
+metallic = 0.1
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("2_g8kq4")
+uv1_triplanar = true
+uv1_world_triplanar = true

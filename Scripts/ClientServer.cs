@@ -11,7 +11,7 @@ namespace Marbles.Scripts;
 public partial class ClientServer : Node
 {
     private const int PORT = 8910;
-    private const int UPDATE_FREQUENCY = 20;
+    private const int UPDATE_FREQUENCY = 10;
     private ENetMultiplayerPeer _peer;
 
     private double _timeElapsed;
