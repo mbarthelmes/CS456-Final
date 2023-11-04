@@ -36,10 +36,20 @@ public partial class Player : RigidBody3D
         {
 
         }
-        else
+        else if(Multiplayer.HasMultiplayerPeer())
         {
-            RpcId(1, nameof(ClientServer.UpdateServer), Id, Position, LinearVelocity);
+            RpcId(1, nameof(UpdateServer), Id, Position, Quaternion, LinearVelocity, AngularVelocity);
         }
+    }
+
+    [Rpc(MultiplayerApi.RpcMode.AnyPeer)]
+    public void UpdateServer(long id, Vector3 position, Quaternion rotation, Vector3 velocity, Vector3 angularVelocity)
+    {
+        var player = _playerData.Players[id].Player;
+        player.Position = position;
+        player.Quaternion = rotation;
+        player.LinearVelocity = velocity;
+        player.AngularVelocity = angularVelocity;
     }
 
     public void SetId(long id)

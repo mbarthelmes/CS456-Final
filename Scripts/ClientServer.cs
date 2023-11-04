@@ -11,10 +11,15 @@ namespace Marbles.Scripts;
 public partial class ClientServer : Node
 {
     private const int PORT = 8910;
+    private const int UPDATE_FREQUENCY = 20;
     private ENetMultiplayerPeer _peer;
+
+    private double _timeElapsed;
+    private double _lastUpdate;
 
     private PackedScene _playerScene;
     private PlayerData _playerData;
+
     public override void _Ready()
     {
         _playerData = (PlayerData)GetParent().FindChild("PlayerData");
@@ -26,10 +31,17 @@ public partial class ClientServer : Node
     {
         if (Multiplayer.IsServer())
         {
-            foreach (var (id, info) in _playerData.Players)
+            _timeElapsed += delta;
+
+            if (_timeElapsed - _lastUpdate > 1.0 / UPDATE_FREQUENCY)
             {
-                var player = info.Player;
-                Rpc(nameof(UpdateClient), id, player.Position, player.LinearVelocity);
+                _lastUpdate = _timeElapsed;
+
+                foreach (var (id, info) in _playerData.Players)
+                {
+                    var player = info.Player;
+                    Rpc(nameof(UpdateClient), id, player.Position, player.Quaternion, player.LinearVelocity, player.AngularVelocity);
+                }
             }
         }
     }
@@ -57,22 +69,17 @@ public partial class ClientServer : Node
         _playerData.OnPlayerConnected(newPlayer);
     }
 
-    [Rpc(MultiplayerApi.RpcMode.AnyPeer)]
-    public void UpdateServer(long id, Vector3 position, Vector3 velocity)
-    {
-        GD.Print($"RPC Server: {position} {velocity}");
-        var player = _playerData.Players[id].Player;
-        player.Position = position;
-        player.LinearVelocity = velocity;
-    }
-
     [Rpc(MultiplayerApi.RpcMode.Authority)]
-    public void UpdateClient(long id, Vector3 position, Vector3 velocity)
+    public void UpdateClient(long id, Vector3 position, Quaternion rotation, Vector3 velocity, Vector3 angularVelocity)
     {
-        GD.Print($"RPC Client: {position} {velocity}");
+        if (id == Multiplayer.MultiplayerPeer.GetUniqueId())
+            return;
+
         var player = _playerData.Players[id].Player;
         player.Position = position;
+        player.Quaternion = rotation;
         player.LinearVelocity = velocity;
+        player.AngularVelocity = angularVelocity;
     }
 
     public void Join(string ip)
