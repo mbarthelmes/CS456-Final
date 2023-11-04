@@ -19,6 +19,7 @@ public partial class MainMenu : Node2D
     private TextEdit _textEdit;
     private Button _joinSubMenuBack;
     private OptionButton _ballOptions;
+    private ClientServer _clientServer;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -56,6 +57,7 @@ public partial class MainMenu : Node2D
         _playerSubMenuBack.Pressed += _joinSubMenuBack_Pressed;
 
         _ballOptions = (OptionButton)_playerSubMenu.FindChild("OptionButton");
+        _clientServer = ((ClientServer)FindParent("Node3D").FindChild("Session").FindChild("ClientServer"));
     }
 
     private void _settings_Pressed()
@@ -66,7 +68,7 @@ public partial class MainMenu : Node2D
 
     private void _connect_Pressed()
     {
-        ((ClientServer)FindParent("Node3D").FindChild("Session").FindChild("ClientServer")).Join(_textEdit.Text);
+        _clientServer.Join(_textEdit.Text);
         Multiplayer.ConnectedToServer += Multiplayer_ConnectedToServer;
     }
 
@@ -76,7 +78,7 @@ public partial class MainMenu : Node2D
         Multiplayer.ConnectedToServer -= Multiplayer_ConnectedToServer;
         ((Player)FindParent("Node3D").FindChild("Player")).SetId(Multiplayer.MultiplayerPeer.GetUniqueId());
         Multiplayer.ServerDisconnected += Multiplayer_ServerDisconnected;
-        ((ClientServer)FindParent("Node3D").FindChild("Session").FindChild("ClientServer")).SetMaterial(Multiplayer.MultiplayerPeer.GetUniqueId(), _ballOptions.GetItemText(_ballOptions.Selected));
+        _clientServer.SetMaterial(Multiplayer.MultiplayerPeer.GetUniqueId(), _ballOptions.GetItemText(_ballOptions.Selected));
     }
 
     private void Multiplayer_ServerDisconnected()
@@ -88,8 +90,8 @@ public partial class MainMenu : Node2D
 
     private void _host_Pressed()
     {
-        ((ClientServer)FindParent("Node3D").FindChild("Session").FindChild("ClientServer")).Host();
-        ((ClientServer)FindParent("Node3D").FindChild("Session").FindChild("ClientServer")).SetMaterial(Multiplayer.MultiplayerPeer.GetUniqueId(), _ballOptions.GetItemText(_ballOptions.Selected));
+        _clientServer.Host();
+        _clientServer.SetMaterial(Multiplayer.MultiplayerPeer.GetUniqueId(), _ballOptions.GetItemText(_ballOptions.Selected));
         Visible = false;
     }
 

@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b1u2tduow6uk5" path="res://Textures/Normal.jpg" id="2_ie7ia"]
 
 [resource]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.72549)
 albedo_texture = ExtResource("1_8f86f")
 metallic = 0.1
 roughness = 0.25
