@@ -1,8 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkea8podrbdrq"]
+[gd_scene load_steps=9 format=3 uid="uid://bkea8podrbdrq"]
 
 [ext_resource type="PackedScene" uid="uid://ch1npu4nviobg" path="res://Scenes/Player.tscn" id="1_wli8v"]
-[ext_resource type="PackedScene" path="res://Scenes/Playground.tscn" id="2_j2f0r"]
-[ext_resource type="Texture2D" uid="uid://bjc4ehbvpqegf" path="res://Textures/Sky_Day_BlueSky_Equirect.png" id="3_01xgy"]
+[ext_resource type="PackedScene" uid="uid://ct2sb86d3f2ur" path="res://Scenes/Playground.tscn" id="2_j2f0r"]
+[ext_resource type="Texture2D" uid="uid://d34mbcnlh7xtk" path="res://Textures/Sky_Day_BlueSky_Equirect.png" id="3_01xgy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vd03e"]
+friction = 0.5
+bounce = 0.25
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jfsbe"]
 panorama = ExtResource("3_01xgy")
@@ -23,6 +27,9 @@ sky = SubResource("Sky_e110a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6.39026)
 
 [node name="Player" parent="." instance=ExtResource("1_wli8v")]
+physics_material_override = SubResource("PhysicsMaterial_vd03e")
+continuous_cd = true
+can_sleep = false
 
 [node name="Playground" parent="." instance=ExtResource("2_j2f0r")]
 
