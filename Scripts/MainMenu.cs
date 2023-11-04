@@ -6,6 +6,8 @@ public partial class MainMenu : Node2D
 {
     private Control _rootMenu;
 
+    private Control _playerSubMenu;
+
     private Control _joinSubmenu;
     private Button _connect;
     private Button _host;
@@ -41,6 +43,7 @@ public partial class MainMenu : Node2D
         _joinSubMenuBack = (Button)_joinSubmenu.FindChild("Back");
         _joinSubMenuBack.Pressed += _joinSubMenuBack_Pressed;
 
+        _playerSubMenu = (Button)_playerSubMenu.FindChild("SettingsSubMenu");
     }
 
     private void _connect_Pressed()

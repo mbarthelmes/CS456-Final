@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=3 uid="uid://ct2sb86d3f2ur"]
 
 [ext_resource type="Material" uid="uid://bvlxw2qpfbqpe" path="res://materials/Floor.tres" id="1_iccmp"]
-[ext_resource type="Material" uid="uid://7hbndkh8fuhy" path="res://materials/Window.tres" id="2_62y4w"]
-[ext_resource type="Material" uid="uid://cpkshxty6858o" path="res://materials/Tube.tres" id="3_lm73x"]
+[ext_resource type="Material" path="res://materials/Window.tres" id="2_62y4w"]
+[ext_resource type="Material" path="res://materials/Tube.tres" id="3_lm73x"]
 [ext_resource type="Script" path="res://Scripts/Spawn.cs" id="4_gd33t"]
 [ext_resource type="Material" uid="uid://boshlmtebhgh5" path="res://materials/Floor2.tres" id="4_i7psu"]
 
