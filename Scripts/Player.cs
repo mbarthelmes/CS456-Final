@@ -3,6 +3,8 @@ using System;
 
 public partial class Player : RigidBody3D
 {
+    public int Id = 1;
+
     [Export]
     public float GroundSpeed = 5;
 
@@ -17,11 +19,16 @@ public partial class Player : RigidBody3D
     private bool _jumping;
     private bool _grounded;
 
+    private PlayerData _playerData;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         _collider = (CollisionShape3D)FindChild("CollisionShape3D");
         _camera = (Node3D)FindParent("Node3D").FindChild("Camera3D");
+        _playerData = (PlayerData)FindParent("Node3D").FindChild("Session").FindChild("PlayerData");
+
+        _playerData.OnPlayerConnected(Id);
     }
 
     public override void _PhysicsProcess(double delta)

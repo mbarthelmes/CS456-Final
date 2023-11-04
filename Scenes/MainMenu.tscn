@@ -76,7 +76,7 @@ horizontal_alignment = 1
 [node name="IP" type="TextEdit" parent="Control/JoinSubMenu"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
-placeholder_text = "IP"
+placeholder_text = "127.0.0.1"
 
 [node name="Connect" type="Button" parent="Control/JoinSubMenu"]
 layout_mode = 2
