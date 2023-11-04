@@ -12,6 +12,7 @@ public partial class MainMenu : Node2D
     private Button _join;
 	private Button _exit;
 
+    private TextEdit _textEdit;
     private Button _joinSubMenuBack;
 
 	// Called when the node enters the scene tree for the first time.
@@ -22,6 +23,8 @@ public partial class MainMenu : Node2D
 
         _join = (Button)FindChild("Join");
         _join.Pressed += _join_Pressed;
+
+        _textEdit = (TextEdit)FindChild("IP");
 
         _connect = (Button)FindChild("Connect");
         _connect.Pressed += _connect_Pressed;
@@ -42,7 +45,7 @@ public partial class MainMenu : Node2D
 
     private void _connect_Pressed()
     {
-        ((ClientServer)FindParent("Node3D").FindChild("Session").FindChild("ClientServer")).Join("127.0.0.1");
+        ((ClientServer)FindParent("Node3D").FindChild("Session").FindChild("ClientServer")).Join(_textEdit.Text);
         Multiplayer.ConnectedToServer += Multiplayer_ConnectedToServer;
     }
 
