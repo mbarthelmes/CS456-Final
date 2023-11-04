@@ -19,6 +19,7 @@ public partial class Player : RigidBody3D
     private Node3D _camera;
     private bool _jumping;
     private bool _grounded;
+    private Node2D _menu;
 
     private PlayerData _playerData;
 
@@ -30,6 +31,7 @@ public partial class Player : RigidBody3D
         _playerData = (PlayerData)FindParent("Node3D").FindChild("Session").FindChild("PlayerData");
 
         _playerData.OnPlayerConnected(this);
+        _menu = (Node2D)FindParent("Node3D").FindChild("MainMenu");
     }
 
     public override void _Process(double delta)
@@ -85,6 +87,9 @@ public partial class Player : RigidBody3D
 
         Quaternion rot = Quaternion.FromEuler(new Vector3(0, (Mathf.Pi * 2) - _camera.Rotation.Y, 0));
         Vector3 input = Vector3.Zero;
+
+        if (_menu.Visible)
+            return;
 
         input.X = Input.GetAxis("Left", "Right");
         input.Z = Input.GetAxis("Forward", "Backward");
