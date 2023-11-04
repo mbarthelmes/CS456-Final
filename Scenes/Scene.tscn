@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bkea8podrbdrq"]
+[gd_scene load_steps=18 format=3 uid="uid://bkea8podrbdrq"]
 
 [ext_resource type="PackedScene" uid="uid://d250q6rat0e6b" path="res://Scenes/MainMenu.tscn" id="1_j6cve"]
 [ext_resource type="Script" path="res://Scripts/Camera.cs" id="1_ua35d"]
@@ -16,8 +16,7 @@ friction = 0.5
 bounce = 0.25
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gmdnl"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_7k4qj"]
+size = Vector3(1, 0.513196, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5yvj4"]
 size = Vector3(1000, 10, 1000)
@@ -53,27 +52,18 @@ continuous_cd = true
 can_sleep = false
 
 [node name="WinArea" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
 script = ExtResource("5_6frfg")
 NextLevel = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WinArea"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1, 0)
 shape = SubResource("BoxShape3D_gmdnl")
 
 [node name="Label3D" type="Label3D" parent="WinArea"]
 billboard = 1
-text = "Win"
-
-[node name="LoseArea" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, 0)
-script = ExtResource("5_3ycx0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LoseArea"]
-shape = SubResource("BoxShape3D_7k4qj")
-
-[node name="Label3D" type="Label3D" parent="LoseArea"]
-billboard = 1
-text = "Lose"
+text = "Start"
+font_size = 96
 
 [node name="GlobalLoseArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -200, 0)
