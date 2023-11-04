@@ -57,6 +57,23 @@ public partial class ClientServer : Node
         }
     }
 
+    public void SetMaterial(long id, string material)
+    {
+        Rpc(nameof(ServerSetMaterial), id, material);
+    }
+
+    [Rpc(MultiplayerApi.RpcMode.AnyPeer)]
+    public void ServerSetMaterial(long id, string material)
+    {
+        Rpc(nameof(UpdateClientMaterial), id, material);
+    }
+
+    [Rpc(MultiplayerApi.RpcMode.Authority)]
+    public void UpdateClientMaterial(long id, string material)
+    {
+        ((MeshInstance3D)_playerData.Players[id].Player.FindChild("MeshInstance3D")).MaterialOverride = ResourceLoader.Load<Material>($"Materials/{material}.tres");
+    }
+
     public void Host()
     {
         GD.Print(_peer.CreateServer(PORT));

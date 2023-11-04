@@ -17,10 +17,9 @@ public partial class Camera : Camera3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		Position = _player.Position + (Vector3.Back * 5) + (Vector3.Up * 5);
-		//LookAt(_player.Position, Vector3.Up);
-		
-	}
+        Position = _player.Position + (Vector3.Forward * Quaternion.FromEuler(new Vector3(0, _rotationX, 0))) * 5 + Vector3.Up;
+        LookAt(_player.Position, Vector3.Up);
+    }
 
     public override void _Input(InputEvent @event)
     {
@@ -31,13 +30,13 @@ public partial class Camera : Camera3D
             _rotationY += mouseMotionEvent.Relative.Y * LookAroundSpeed;
 
             // reset rotation
-            Transform3D transform = Transform;
+            /*Transform3D transform = Transform;
             transform.Basis = Basis.Identity;
             Transform = transform;
 
             RotateObjectLocal(Vector3.Up, _rotationX); // first rotate about Y
             RotateObjectLocal(Vector3.Right, _rotationY);
-
+*/
         }
 
     }
