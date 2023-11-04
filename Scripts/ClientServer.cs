@@ -71,7 +71,7 @@ public partial class ClientServer : Node
     [Rpc(MultiplayerApi.RpcMode.Authority)]
     public void UpdateClientMaterial(long id, string material)
     {
-        ((MeshInstance3D)_playerData.Players[id].Player.FindChild("MeshInstance3D")).MaterialOverride = ResourceLoader.Load<Material>($"Materials/{material}.tres");
+        ((MeshInstance3D)_playerData.Players[id].Player.FindChild("MeshInstance3D")).MaterialOverride = ResourceLoader.Load<Material>($"Materials/Marbles/{material}.tres");
     }
 
     public void Host()

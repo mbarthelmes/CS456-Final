@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://juux73tgiuth"]
+
+[ext_resource type="Texture2D" uid="uid://dtaomolti8wdf" path="res://Textures/Marble/zeller.jpg" id="1_kwfxp"]
+[ext_resource type="Texture2D" uid="uid://b1u2tduow6uk5" path="res://Textures/Normal.jpg" id="2_7csr0"]
+
+[resource]
+albedo_texture = ExtResource("1_kwfxp")
+metallic = 0.1
+roughness = 0.5
+normal_enabled = true
+normal_scale = 0.25
+normal_texture = ExtResource("2_7csr0")
+uv1_scale = Vector3(2, 2, 2)
