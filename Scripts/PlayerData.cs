@@ -36,6 +36,7 @@ public partial class PlayerData : Node
 	public void OnCollectableCollected(long id)
 	{
 		Players[id].Score++;
+		((Label)FindParent("Node3D").FindChild("Score")).Text = "Collectable " + Players[id].Score.ToString();
     }
 
 	public void OnPlayerDied(long id, int level)
