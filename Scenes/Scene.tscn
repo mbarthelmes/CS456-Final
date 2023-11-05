@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://b48bo6os0bena" path="res://Scenes/Level2.tscn" id="10_2j3s3"]
 [ext_resource type="PackedScene" uid="uid://c7au6votussoo" path="res://Scenes/YcpCollectible.tscn" id="11_6mkh3"]
 [ext_resource type="PackedScene" uid="uid://b8y6uf3kpvlqi" path="res://Scenes/Hud.tscn" id="12_2q7lw"]
+[ext_resource type="PackedScene" uid="uid://b48bo6os0bena" path="res://Scenes/Level3.tscn" id="10_2j3s3"]
+[ext_resource type="PackedScene" path="res://Scenes/YcpCollectible.tscn" id="11_6mkh3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vd03e"]
 friction = 0.5
