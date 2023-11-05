@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://bvlxw2qpfbqpe" path="res://materials/Floor.tres" id="1_iccmp"]
 [ext_resource type="Material" uid="uid://lgykdoiid8ba" path="res://materials/Window.tres" id="2_62y4w"]
-[ext_resource type="Material" uid="uid://c4cr3j3v127bt" path="res://materials/Logo.tres" id="3_2scic"]
+[ext_resource type="Material" uid="uid://c6w5qvlq1sbcl" path="res://materials/Logo.tres" id="3_2scic"]
 [ext_resource type="Material" uid="uid://drk4ld20wb3mn" path="res://materials/Tube.tres" id="3_lm73x"]
 [ext_resource type="Script" path="res://Scripts/Spawn.cs" id="4_gd33t"]
 [ext_resource type="Material" uid="uid://boshlmtebhgh5" path="res://materials/Floor2.tres" id="4_i7psu"]
@@ -151,6 +151,7 @@ shape = SubResource("ConcavePolygonShape3D_ntc27")
 transform = Transform3D(20, 0, 0, 0, 5, 0, 0, 0, 0.5, -9.74, 0.04, 4.25)
 material_override = ExtResource("2_62y4w")
 transparency = 0.5
+cast_shadow = 0
 mesh = SubResource("BoxMesh_ioyqi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall L"]
@@ -162,6 +163,7 @@ shape = SubResource("ConcavePolygonShape3D_ntc27")
 transform = Transform3D(20, 0, 0, 0, 5, 0, 0, 0, 0.5, -9.74, 0.04, -4.25)
 material_override = ExtResource("2_62y4w")
 transparency = 0.5
+cast_shadow = 0
 mesh = SubResource("BoxMesh_ioyqi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall R"]
@@ -173,6 +175,7 @@ shape = SubResource("ConcavePolygonShape3D_ntc27")
 transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 9, -19.49, 0.04, 0)
 material_override = ExtResource("2_62y4w")
 transparency = 0.5
+cast_shadow = 0
 mesh = SubResource("BoxMesh_ioyqi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall B"]
@@ -184,6 +187,7 @@ shape = SubResource("ConcavePolygonShape3D_ntc27")
 transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 2.855, 0.01, 0.04, -3.074)
 material_override = ExtResource("2_62y4w")
 transparency = 0.5
+cast_shadow = 0
 mesh = SubResource("BoxMesh_ioyqi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall FL"]
@@ -195,6 +199,7 @@ shape = SubResource("ConcavePolygonShape3D_ntc27")
 transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 2.855, 0.01, 0.04, 3.074)
 material_override = ExtResource("2_62y4w")
 transparency = 0.5
+cast_shadow = 0
 mesh = SubResource("BoxMesh_ioyqi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall FR"]
@@ -205,6 +210,7 @@ shape = SubResource("ConcavePolygonShape3D_ntc27")
 [node name="Wall FC" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 3.29, 0.01, 1.54, 0)
 material_override = ExtResource("3_2scic")
+cast_shadow = 0
 mesh = SubResource("BoxMesh_ioyqi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall FC"]
