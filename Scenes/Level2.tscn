@@ -25,7 +25,7 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 [node name="Node3D" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.213169)
+transform = Transform3D(1, 0, 0, 0, -1.39886, 8.74228e-08, 0, -1.22293e-07, -1, 0, 5.56934, -0.430552)
 material_override = ExtResource("3_67lq6")
 mesh = ExtResource("1_61ui2")
 
@@ -74,12 +74,13 @@ billboard = 1
 text = "Win"
 
 [node name="Win Box" type="Area3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.135558, 0.0573258, -0.430552)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0104104, 6.00883, -0.430552)
 script = ExtResource("6_tpggj")
 Level = 4
 NextLevel = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Win Box"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
 shape = SubResource("BoxShape3D_hnxs8")
 
 [node name="Label3D" type="Label3D" parent="Win Box"]

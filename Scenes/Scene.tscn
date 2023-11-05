@@ -184,31 +184,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138.319, 172.506, 72.4124)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157.343, 1.15459, 70.1924)
 
 [node name="YcpCollectible22" parent="." instance=ExtResource("11_6mkh3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.2718, -3.16054, 149.094)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 67.2718, 12.7937, 170.83)
 
 [node name="YcpCollectible23" parent="." instance=ExtResource("11_6mkh3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.3278, 0.374355, 147.986)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 49.3278, 9.25881, 171.938)
 
 [node name="YcpCollectible24" parent="." instance=ExtResource("11_6mkh3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.6588, -2.06254, 167.67)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 52.6588, 11.6957, 152.254)
 
 [node name="YcpCollectible26" parent="." instance=ExtResource("11_6mkh3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.4448, -5.88724, 164.216)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 68.4448, 15.5204, 155.708)
 
 [node name="YcpCollectible27" parent="." instance=ExtResource("11_6mkh3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.2428, -5.81344, 158.038)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 60.2428, 15.4466, 161.886)
 
 [node name="YcpCollectible28" parent="." instance=ExtResource("11_6mkh3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.8968, -1.30004, 159.315)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 80.8968, 10.9332, 160.609)
 
 [node name="YcpCollectible29" parent="." instance=ExtResource("11_6mkh3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.4628, -0.0250435, 146.975)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 78.4628, 9.6582, 172.949)
 
 [node name="YcpCollectible30" parent="." instance=ExtResource("11_6mkh3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.8448, -1.47044, 175.007)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 70.8448, 11.1036, 144.917)
 
 [node name="YcpCollectible25" parent="." instance=ExtResource("11_6mkh3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.9708, 0.44376, 171.359)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 81.9708, 9.1894, 148.565)
 
 [node name="YcpCollectible31" parent="." instance=ExtResource("11_6mkh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.6954, 13.5909, -106.992)
