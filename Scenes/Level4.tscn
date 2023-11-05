@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://1v8cp0rc4gfd"]
+[gd_scene load_steps=11 format=3 uid="uid://1v8cp0rc4gfd"]
 
 [ext_resource type="ArrayMesh" uid="uid://cteku3q3ue7g6" path="res://Models/Pipe.obj" id="1_5cnci"]
+[ext_resource type="Material" uid="uid://lgykdoiid8ba" path="res://materials/Window.tres" id="1_irqt6"]
 [ext_resource type="Material" uid="uid://bvlxw2qpfbqpe" path="res://materials/Floor.tres" id="2_y1u22"]
 [ext_resource type="Script" path="res://Scripts/Spawn.cs" id="3_qd2bf"]
 [ext_resource type="Script" path="res://Scripts/WinArea.cs" id="4_6h08d"]
@@ -21,7 +22,7 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 325.946, 0, 330.721)
-material_override = ExtResource("2_y1u22")
+material_override = ExtResource("1_irqt6")
 mesh = ExtResource("1_5cnci")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
