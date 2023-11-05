@@ -4,14 +4,14 @@
 [ext_resource type="Script" path="res://Scripts/Spawn.cs" id="2_2kox7"]
 [ext_resource type="Script" path="res://Scripts/WinArea.cs" id="2_2m7iw"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3sk3g"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_0bie1"]
 
 [node name="Level2" type="Node3D"]
 
 [node name="Spawn" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 49)
 script = ExtResource("2_2kox7")
-Level = 3
+Level = 5
 
 [node name="RoundRamp" parent="." instance=ExtResource("1_5txse")]
 transform = Transform3D(0.241977, 0, -0.437547, 0, 0.5, 0, 0.437547, 0, 0.241977, 0, 0, -2.47809)
@@ -40,14 +40,29 @@ transform = Transform3D(-0.00154024, 0, -0.249995, 0, 0.25, 0, 0.249995, 0, -0.0
 [node name="RoundRamp9" parent="." instance=ExtResource("1_5txse")]
 transform = Transform3D(-0.00140557, -0.102234, -0.228136, -0.000629861, 0.228141, -0.102232, 0.249995, 0, -0.00154024, 31.8039, 1.83375, -3.99483)
 
-[node name="WinArea" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+[node name="Win Box" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.4532, 4.33344, -3.84888)
 script = ExtResource("2_2m7iw")
+Level = 5
+NextLevel = 6
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WinArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.0057, 0, -4.02885)
-shape = SubResource("BoxShape3D_3sk3g")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Win Box"]
+shape = SubResource("BoxShape3D_0bie1")
 
-[node name="Label3D" type="Label3D" parent="WinArea"]
+[node name="Label3D" type="Label3D" parent="Win Box"]
+billboard = 1
+text = "Win"
+
+[node name="Lose Box" type="Area3D" parent="."]
+transform = Transform3D(150, 0, 0, 0, 1, 0, 0, 0, 150, 11.298, -8.48302, 26.9834)
+visible = false
+script = ExtResource("2_2m7iw")
+Level = 5
+NextLevel = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lose Box"]
+shape = SubResource("BoxShape3D_0bie1")
+
+[node name="Label3D" type="Label3D" parent="Lose Box"]
 billboard = 1
 text = "Win"

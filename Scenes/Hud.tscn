@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://b8y6uf3kpvlqi"]
+[gd_scene load_steps=2 format=3 uid="uid://b8y6uf3kpvlqi"]
+
+[ext_resource type="Texture2D" uid="uid://csq86rx3b4x8l" path="res://Textures/ycp_hacks.png" id="1_jrhd8"]
 
 [node name="Hud" type="CanvasLayer"]
 
@@ -8,8 +10,13 @@ anchor_left = 0.999
 anchor_top = 0.003
 anchor_right = 0.999
 anchor_bottom = 0.003
-offset_left = -103.848
-offset_top = -1.944
-offset_right = -0.848145
-offset_bottom = 24.056
-text = "Collectable: 0"
+offset_left = -38.848
+offset_top = 22.056
+offset_right = 118.152
+offset_bottom = 48.056
+text = ": 0"
+
+[node name="YcpHacks" type="Sprite2D" parent="."]
+position = Vector2(1090, 36)
+scale = Vector2(0.126667, 0.126667)
+texture = ExtResource("1_jrhd8")

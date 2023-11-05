@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bkea8podrbdrq"]
+[gd_scene load_steps=24 format=3 uid="uid://bkea8podrbdrq"]
 
 [ext_resource type="PackedScene" uid="uid://d250q6rat0e6b" path="res://Scenes/MainMenu.tscn" id="1_j6cve"]
 [ext_resource type="Script" path="res://Scripts/Camera.cs" id="1_ua35d"]
@@ -12,7 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://b48bo6os0bena" path="res://Scenes/Level3.tscn" id="10_2j3s3"]
 [ext_resource type="PackedScene" uid="uid://c7au6votussoo" path="res://Scenes/YcpCollectible.tscn" id="11_6mkh3"]
 [ext_resource type="PackedScene" uid="uid://b8y6uf3kpvlqi" path="res://Scenes/Hud.tscn" id="12_2q7lw"]
+[ext_resource type="PackedScene" uid="uid://1v8cp0rc4gfd" path="res://Scenes/Level4.tscn" id="13_exf26"]
 [ext_resource type="PackedScene" uid="uid://ckyqb0r0slenv" path="res://Scenes/Rectangles.tscn" id="13_ghtkw"]
+[ext_resource type="PackedScene" uid="uid://2l8kfa8rf5gx" path="res://Scenes/Level2.tscn" id="15_ku4me"]
+[ext_resource type="Script" path="res://Scripts/Spawn.cs" id="16_u7g4m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vd03e"]
 friction = 0.5
@@ -111,7 +114,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 
 [node name="Level2" parent="." instance=ExtResource("10_2j3s3")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24, 12, 19.3251)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24, 12, -194.047)
 
 [node name="YcpCollectible2" parent="." instance=ExtResource("11_6mkh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131, 18, -40)
@@ -125,10 +128,105 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.37, 2.1181, -38.571)
 [node name="YcpCollectible5" parent="." instance=ExtResource("11_6mkh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.9768, 2.1181, -20.0317)
 
-[node name="YcpCollectible4" parent="." instance=ExtResource("11_6mkh3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8005, 12.5, 23.0012)
-
 [node name="Hud" parent="." instance=ExtResource("12_2q7lw")]
 
-[node name="Node3D2" parent="." instance=ExtResource("13_ghtkw")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 150.914, -1.39209, -23.4925)
+[node name="Level 3" parent="." instance=ExtResource("13_exf26")]
+transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, 0, 0, 399.559)
+
+[node name="Level 2" parent="." instance=ExtResource("13_ghtkw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.914, -1.39209, 73.8055)
+
+[node name="Level 4" parent="." instance=ExtResource("15_ku4me")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -343.767, 56.8013, 50.925)
+
+[node name="Spawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0588006, 1.03074, -79.0511)
+script = ExtResource("16_u7g4m")
+Level = 6
+
+[node name="YcpCollectible6" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.7023, -1.39208, -64.7263)
+
+[node name="YcpCollectible4" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.07, -1.39209, 48.1319)
+
+[node name="YcpCollectible7" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.847, -1.39208, -102.481)
+
+[node name="YcpCollectible8" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.992, -1.39209, 110.804)
+
+[node name="YcpCollectible9" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1748, -1.39208, 95.9804)
+
+[node name="YcpCollectible10" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.0624, -1.39208, 55.1633)
+
+[node name="YcpCollectible11" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -106.017, -1.39208, -8.21538)
+
+[node name="YcpCollectible12" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.8833, -1.39208, -107.698)
+
+[node name="YcpCollectible13" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107002, -1.05084, -78.7167)
+
+[node name="YcpCollectible14" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212.315, 4.3006, -38.1665)
+
+[node name="YcpCollectible15" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 187.007, -1.07334, 76.4406)
+
+[node name="YcpCollectible16" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 156.28, -0.772274, 76.962)
+
+[node name="YcpCollectible17" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.443, -0.921978, 70.9082)
+
+[node name="YcpCollectible18" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.7461, 578.96, 456.926)
+
+[node name="YcpCollectible19" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.7023, 335.702, 363.168)
+
+[node name="YcpCollectible20" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.081, 180.847, 410.598)
+
+[node name="YcpCollectible21" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.94296, 9.49579, 408.378)
+
+[node name="YcpCollectible22" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -341.419, 61.4803, 37.8876)
+
+[node name="YcpCollectible23" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -359.363, 65.0152, 36.7795)
+
+[node name="YcpCollectible24" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -356.032, 62.5783, 56.4635)
+
+[node name="YcpCollectible26" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -340.246, 58.7536, 53.0094)
+
+[node name="YcpCollectible27" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -348.448, 58.8274, 46.8312)
+
+[node name="YcpCollectible28" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.794, 63.3408, 48.1088)
+
+[node name="YcpCollectible29" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.228, 64.6158, 35.7687)
+
+[node name="YcpCollectible30" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -337.846, 63.1704, 63.8006)
+
+[node name="YcpCollectible25" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.72, 65.0846, 60.1523)
+
+[node name="YcpCollectible31" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9046, 24.1953, -194.038)
+
+[node name="YcpCollectible32" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.2893, -1.39208, -38.8128)
+
+[node name="YcpCollectible33" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0436, -1.39208, -0.264539)
