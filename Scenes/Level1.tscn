@@ -192,7 +192,7 @@ surface_material_override/0 = ExtResource("1_ehck2")
 shape = SubResource("ConcavePolygonShape3D_82nm4")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Ramp&Platform2"]
-transform = Transform3D(-1.09278e-08, 0, -4.5, 0, 3, 0, 0.25, 0, -1.96701e-07, -0.4, 0.666667, 0.4)
+transform = Transform3D(-1.09278e-08, 0, -4.5, 0, 3, 0, 0.25, 0, -1.96701e-07, -0.4, 0.666667, 0.622944)
 material_override = ExtResource("3_ptwv0")
 mesh = SubResource("BoxMesh_iprwo")
 surface_material_override/0 = ExtResource("1_ehck2")

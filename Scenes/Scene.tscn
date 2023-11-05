@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/LoseArea.cs" id="5_3ycx0"]
 [ext_resource type="Script" path="res://Scripts/WinArea.cs" id="5_6frfg"]
 [ext_resource type="PackedScene" uid="uid://b48bo6os0bena" path="res://Scenes/Level2.tscn" id="10_2j3s3"]
-[ext_resource type="PackedScene" path="res://Scenes/YcpCollectible.tscn" id="11_6mkh3"]
+[ext_resource type="PackedScene" uid="uid://c7au6votussoo" path="res://Scenes/YcpCollectible.tscn" id="11_6mkh3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vd03e"]
 friction = 0.5
@@ -71,6 +71,7 @@ font_size = 96
 transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 40, 233.456, -24.5952, -40.359)
 visible = false
 script = ExtResource("5_6frfg")
+Level = 1
 NextLevel = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LoseAreaLevel1"]
