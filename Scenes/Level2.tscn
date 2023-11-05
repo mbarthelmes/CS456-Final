@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://2l8kfa8rf5gx"]
+[gd_scene load_steps=14 format=3 uid="uid://2l8kfa8rf5gx"]
 
 [ext_resource type="ArrayMesh" uid="uid://cfnywox3836x5" path="res://Models/Cone.obj" id="1_61ui2"]
 [ext_resource type="Material" uid="uid://cd73m5wqn1vc7" path="res://materials/Floor3.tres" id="1_tqsjo"]
@@ -19,6 +19,9 @@ data = PackedVector3Array(-0.049, 0, -0.4976, 0, 0.0488, -0.5048, 0, 0, -0.5, -0
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_257t6"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dfgan"]
+size = Vector3(40, 1, 40)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hnxs8"]
 
@@ -60,14 +63,13 @@ shape = SubResource("ConcavePolygonShape3D_257t6")
 disabled = true
 
 [node name="Death" type="Area3D" parent="."]
-transform = Transform3D(75, 0, 0, 0, 1, 0, 0, 0, 75, 2.35904, -3.73362, -0.000180304)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35904, -3.73362, -0.000180304)
 script = ExtResource("6_tpggj")
 Level = 4
 NextLevel = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Death"]
-shape = SubResource("BoxShape3D_hnxs8")
+shape = SubResource("BoxShape3D_dfgan")
 
 [node name="Label3D" type="Label3D" parent="Death"]
 billboard = 1

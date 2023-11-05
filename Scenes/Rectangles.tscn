@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckyqb0r0slenv"]
+[gd_scene load_steps=11 format=3 uid="uid://ckyqb0r0slenv"]
 
 [ext_resource type="Material" uid="uid://boshlmtebhgh5" path="res://materials/Floor2.tres" id="1_8usoe"]
 [ext_resource type="Script" path="res://Scripts/WinArea.cs" id="2_k2f25"]
@@ -11,6 +11,9 @@
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4spv2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jx60r"]
+size = Vector3(200, 4, 100)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mvjek"]
 
@@ -44,27 +47,26 @@ billboard = 1
 text = "Win"
 
 [node name="Lose 1" type="Area3D" parent="."]
-transform = Transform3D(200, 0, 0, 0, 4, 0, 0, 0, 100, 51.0554, -40.2487, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0554, -40.2487, 0)
 script = ExtResource("2_k2f25")
 Level = 2
 NextLevel = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Lose 1"]
-shape = SubResource("BoxShape3D_4spv2")
+shape = SubResource("BoxShape3D_jx60r")
 
 [node name="Label3D" type="Label3D" parent="Lose 1"]
 billboard = 1
 text = "Win"
 
 [node name="Lose 2" type="Area3D" parent="."]
-transform = Transform3D(500, 0, 0, 0, 4, 0, 0, 0, 150, 140.808, -76.877, 7.24399)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.808, -76.877, 7.24399)
 script = ExtResource("2_k2f25")
 Level = 2
 NextLevel = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Lose 2"]
+transform = Transform3D(500, 0, 0, 0, 4, 0, 0, 0, 150, 0, 0, 0)
 shape = SubResource("BoxShape3D_4spv2")
 
 [node name="Label3D" type="Label3D" parent="Lose 2"]
