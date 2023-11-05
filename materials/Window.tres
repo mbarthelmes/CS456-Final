@@ -5,9 +5,9 @@
 
 [resource]
 transparency = 1
-albedo_color = Color(1, 1, 1, 0.72549)
+albedo_color = Color(1, 1, 1, 0.498039)
 albedo_texture = ExtResource("1_8f86f")
-metallic = 0.1
+metallic = 0.25
 roughness = 0.25
 normal_enabled = true
 normal_scale = 0.5
