@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://1v8cp0rc4gfd"]
+
+[ext_resource type="ArrayMesh" uid="uid://cteku3q3ue7g6" path="res://Models/Pipe.obj" id="1_5cnci"]
+[ext_resource type="PackedScene" uid="uid://dkhwc1k00hff4" path="res://Scenes/Player.tscn" id="2_aemxd"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 325.946, 0, 330.721)
+mesh = ExtResource("1_5cnci")
+
+[node name="Player" parent="." instance=ExtResource("2_aemxd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 779, 0)
