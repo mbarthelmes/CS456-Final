@@ -78,7 +78,7 @@ mesh = SubResource("BoxMesh_bof61")
 shape = SubResource("ConcavePolygonShape3D_ntc27")
 
 [node name="Stair 4" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.064, 0, 0, 0, 5, 0, 0, 0, 3.29, 2.20467, -4.21218, 0)
+transform = Transform3D(1.91409, 0, 0, 0, 5, 0, 0, 0, 2.08054, 2.20467, -4.21218, 0)
 material_override = ExtResource("1_iccmp")
 mesh = SubResource("BoxMesh_bof61")
 

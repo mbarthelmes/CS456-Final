@@ -102,7 +102,7 @@ public partial class Player : RigidBody3D
             if (!_jumping && _grounded)
             {
                 _jumping = true;
-                LinearVelocity = LinearVelocity + Vector3.Up * (float)delta * JumpStrength;
+                LinearVelocity = new Vector3(LinearVelocity.X, (float)delta * JumpStrength, LinearVelocity.Z);
             }
         }
         else

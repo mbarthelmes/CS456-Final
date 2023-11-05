@@ -49,7 +49,7 @@ size = Vector3(1, 0.513196, 1)
 [node name="Node3D2" type="Node3D"]
 
 [node name="Base" type="MeshInstance3D" parent="."]
-transform = Transform3D(250, 0, 0, 0, 5, 0, 0, 0, 250, -0.0131083, 0.107919, -0.171253)
+transform = Transform3D(193.411, 0, 0, 0, 5, 0, 0, 0, 180.914, 0, 0.108, 8.17447)
 mesh = SubResource("BoxMesh_d0pww")
 surface_material_override/0 = ExtResource("1_ehck2")
 
