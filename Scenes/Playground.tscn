@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ct2sb86d3f2ur"]
+[gd_scene load_steps=24 format=3 uid="uid://ct2sb86d3f2ur"]
 
 [ext_resource type="Material" uid="uid://bvlxw2qpfbqpe" path="res://materials/Floor.tres" id="1_iccmp"]
 [ext_resource type="Material" uid="uid://lgykdoiid8ba" path="res://materials/Window.tres" id="2_62y4w"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://drk4ld20wb3mn" path="res://materials/Tube.tres" id="3_lm73x"]
 [ext_resource type="Script" path="res://Scripts/Spawn.cs" id="4_gd33t"]
 [ext_resource type="Material" uid="uid://boshlmtebhgh5" path="res://materials/Floor2.tres" id="4_i7psu"]
+[ext_resource type="Material" uid="uid://cd73m5wqn1vc7" path="res://materials/Floor3.tres" id="5_bsqrp"]
 [ext_resource type="Script" path="res://Scripts/WinArea.cs" id="6_r2yl8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bof61"]
@@ -273,7 +274,7 @@ shape = SubResource("ConcavePolygonShape3D_ntc27")
 
 [node name="Tri R" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 1.5, 0, 0, 0, 2, -5.84432, -0.551419, 2.99984)
-material_override = ExtResource("1_iccmp")
+material_override = ExtResource("5_bsqrp")
 mesh = SubResource("PrismMesh_wh1b0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Tri R"]
@@ -283,7 +284,7 @@ shape = SubResource("ConcavePolygonShape3D_6qyfa")
 
 [node name="Block R" type="MeshInstance3D" parent="."]
 transform = Transform3D(3.1, 0, 0, 0, 0.5, 0, 0, 0, 2, -1.795, -0.051, 3)
-material_override = ExtResource("1_iccmp")
+material_override = ExtResource("5_bsqrp")
 mesh = SubResource("BoxMesh_gsgox")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Block R"]
@@ -337,7 +338,7 @@ shape = SubResource("CylinderShape3D_k4hi0")
 
 [node name="Tri L" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 1.5, 0, 0, 0, 2, -5.844, -0.551, -3)
-material_override = ExtResource("1_iccmp")
+material_override = ExtResource("5_bsqrp")
 mesh = SubResource("PrismMesh_wh1b0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Tri L"]
@@ -347,7 +348,7 @@ shape = SubResource("ConcavePolygonShape3D_6qyfa")
 
 [node name="Block L" type="MeshInstance3D" parent="."]
 transform = Transform3D(3.1, 0, 0, 0, 0.5, 0, 0, 0, 2, -1.795, -0.051, -3)
-material_override = ExtResource("1_iccmp")
+material_override = ExtResource("5_bsqrp")
 mesh = SubResource("BoxMesh_gsgox")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Block L"]
