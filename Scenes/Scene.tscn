@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bkea8podrbdrq"]
+[gd_scene load_steps=25 format=3 uid="uid://bkea8podrbdrq"]
 
 [ext_resource type="PackedScene" uid="uid://d250q6rat0e6b" path="res://Scenes/MainMenu.tscn" id="1_j6cve"]
 [ext_resource type="Script" path="res://Scripts/Camera.cs" id="1_ua35d"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ckyqb0r0slenv" path="res://Scenes/Rectangles.tscn" id="13_ghtkw"]
 [ext_resource type="PackedScene" uid="uid://2l8kfa8rf5gx" path="res://Scenes/Level2.tscn" id="15_ku4me"]
 [ext_resource type="Script" path="res://Scripts/Spawn.cs" id="16_u7g4m"]
+[ext_resource type="PackedScene" uid="uid://c8qfxrvu8mwls" path="res://Scenes/zeller_2.tscn" id="17_m3txj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vd03e"]
 friction = 0.5
@@ -218,3 +219,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.2893, -1.39208, -38.8128)
 
 [node name="YcpCollectible33" parent="." instance=ExtResource("11_6mkh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0436, -1.39208, -0.264539)
+
+[node name="Zeller3" parent="." instance=ExtResource("17_m3txj")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -8.3805, 1.5, 0.208902)
+
+[node name="Zeller2" parent="." instance=ExtResource("17_m3txj")]
+transform = Transform3D(-75, 0, -6.55671e-06, 0, 75, 0, 6.55671e-06, 0, -75, 10.0599, -1.392, 71.7531)
+
+[node name="Zeller4" parent="." instance=ExtResource("17_m3txj")]
+transform = Transform3D(-75, 0, -6.55671e-06, 0, 75, 0, 6.55671e-06, 0, -75, 10.0599, -1.392, 71.7531)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://u2isa5m6i2e0"]
+
+[ext_resource type="PackedScene" uid="uid://djjhywyoglakl" path="res://Models/Zeller2.glb" id="1_q1vql"]
+[ext_resource type="Texture2D" uid="uid://mh5c0kyidk50" path="res://Models/Zeller_Gold.png" id="2_rsxib"]
+[ext_resource type="Texture2D" uid="uid://b1u2tduow6uk5" path="res://Textures/Normal.jpg" id="3_nts76"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qxvgd"]
+albedo_texture = ExtResource("2_rsxib")
+metallic = 0.5
+roughness = 0.5
+normal_enabled = true
+normal_scale = 0.25
+normal_texture = ExtResource("3_nts76")
+rim_enabled = true
+billboard_mode = 2
+
+[node name="Zeller2" instance=ExtResource("1_q1vql")]
+
+[node name="Mesh_0_001" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_qxvgd")
