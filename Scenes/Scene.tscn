@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ckyqb0r0slenv" path="res://Scenes/Rectangles.tscn" id="13_ghtkw"]
 [ext_resource type="PackedScene" uid="uid://2l8kfa8rf5gx" path="res://Scenes/Level2.tscn" id="15_ku4me"]
 [ext_resource type="Script" path="res://Scripts/Spawn.cs" id="16_u7g4m"]
-[ext_resource type="PackedScene" uid="uid://c8qfxrvu8mwls" path="res://Scenes/zeller_2.tscn" id="17_m3txj"]
+[ext_resource type="PackedScene" path="res://Scenes/zeller_2.tscn" id="17_m3txj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vd03e"]
 friction = 0.5
