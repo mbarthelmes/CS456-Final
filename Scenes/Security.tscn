@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://brd7jgijl03jm"]
+[gd_scene load_steps=6 format=3 uid="uid://brd7jgijl03jm"]
 
 [ext_resource type="Material" uid="uid://bvlxw2qpfbqpe" path="res://materials/Floor.tres" id="1_n0ru0"]
+[ext_resource type="ArrayMesh" uid="uid://boosyokawi7jr" path="res://Models/Path.obj" id="2_xr44l"]
+[ext_resource type="ArrayMesh" uid="uid://drpc5etuduxyj" path="res://Models/Security.obj" id="3_5aw1s"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cpp80"]
 
@@ -18,3 +20,11 @@ mesh = SubResource("BoxMesh_cpp80")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Block/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_kvpre")
+
+[node name="Path" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.957667, 0, 0.287879, 0, 1, 0, -0.287879, 0, 0.957667, 45.3536, 0, -13.1087)
+mesh = ExtResource("2_xr44l")
+
+[node name="Security" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.934751, 0, -0.355303, 0, 1, 0, 0.355303, 0, 0.934751, 59.591, 0.359104, 78.7374)
+mesh = ExtResource("3_5aw1s")

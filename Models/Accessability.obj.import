@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cegqcp64chqku"
+path="res://.godot/imported/Accessability.obj-0b7cd58cbf8d0bc057260165a82d7e8c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Accessability.obj-0b7cd58cbf8d0bc057260165a82d7e8c.mesh"]
+
+source_file="res://Models/Accessability.obj"
+dest_files=["res://.godot/imported/Accessability.obj-0b7cd58cbf8d0bc057260165a82d7e8c.mesh", "res://.godot/imported/Accessability.obj-0b7cd58cbf8d0bc057260165a82d7e8c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

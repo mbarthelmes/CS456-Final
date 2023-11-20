@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://boosyokawi7jr"
+path="res://.godot/imported/Path.obj-8abd327ad943964cf758b4b180720058.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Path.obj-8abd327ad943964cf758b4b180720058.mesh"]
+
+source_file="res://Models/Path.obj"
+dest_files=["res://.godot/imported/Path.obj-8abd327ad943964cf758b4b180720058.mesh", "res://.godot/imported/Path.obj-8abd327ad943964cf758b4b180720058.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

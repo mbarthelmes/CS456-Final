@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhryw3qvcd7ov"]
+[gd_scene load_steps=6 format=3 uid="uid://bhryw3qvcd7ov"]
 
 [ext_resource type="Material" uid="uid://bvlxw2qpfbqpe" path="res://materials/Floor.tres" id="1_hcy8r"]
+[ext_resource type="ArrayMesh" uid="uid://dyhgitrtp47jm" path="res://Models/SellingData.obj" id="2_0uiol"]
+[ext_resource type="ArrayMesh" uid="uid://boosyokawi7jr" path="res://Models/Path.obj" id="3_jd0s5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dtr0u"]
 
@@ -18,3 +20,11 @@ mesh = SubResource("BoxMesh_dtr0u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Block/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_dfcki")
+
+[node name="SellingData" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.953349, 0, 0.301871, 0, 1, 0, -0.301871, 0, 0.953349, -13.4393, 20, 161.411)
+mesh = ExtResource("2_0uiol")
+
+[node name="Path" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1519, -2.21288, -6.55091)
+mesh = ExtResource("3_jd0s5")
