@@ -365,3 +365,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.937072, 0)
 billboard = 1
 text = "Level 5"
 font_size = 96
+
+[node name="New Game" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0613, 7.51055, 4.44107)
+script = ExtResource("6_cll33")
+NextLevel = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="New Game"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1, 0)
+shape = SubResource("BoxShape3D_e6a0i")
+
+[node name="Label3D" type="Label3D" parent="New Game"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.937072, 0)
+billboard = 1
+text = "New Game"
+font_size = 96

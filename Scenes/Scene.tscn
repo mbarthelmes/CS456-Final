@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bkea8podrbdrq"]
+[gd_scene load_steps=26 format=3 uid="uid://bkea8podrbdrq"]
 
 [ext_resource type="PackedScene" uid="uid://d250q6rat0e6b" path="res://Scenes/MainMenu.tscn" id="1_j6cve"]
 [ext_resource type="Script" path="res://Scripts/Camera.cs" id="1_ua35d"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://2l8kfa8rf5gx" path="res://Scenes/Level2.tscn" id="15_ku4me"]
 [ext_resource type="Script" path="res://Scripts/Spawn.cs" id="16_u7g4m"]
 [ext_resource type="PackedScene" uid="uid://c8qfxrvu8mwls" path="res://Scenes/zeller_2.tscn" id="17_m3txj"]
+[ext_resource type="PackedScene" uid="uid://jgfmxalobjqt" path="res://Scenes/EthicsHub.tscn" id="18_wlt4k"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vd03e"]
 friction = 0.5
@@ -228,3 +229,6 @@ transform = Transform3D(-75, 0, -6.55671e-06, 0, 75, 0, 6.55671e-06, 0, -75, 10.
 
 [node name="Zeller4" parent="." instance=ExtResource("17_m3txj")]
 transform = Transform3D(-75, 0, -6.55671e-06, 0, 75, 0, 6.55671e-06, 0, -75, 10.0599, -1.392, 71.7531)
+
+[node name="EthicsHub" parent="." instance=ExtResource("18_wlt4k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 451.549, -1.39199, -545.958)

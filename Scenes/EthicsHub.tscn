@@ -1,16 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://jgfmxalobjqt"]
+[gd_scene load_steps=14 format=3 uid="uid://jgfmxalobjqt"]
 
 [ext_resource type="Material" uid="uid://bvlxw2qpfbqpe" path="res://materials/Floor.tres" id="1_5mrdm"]
+[ext_resource type="Material" uid="uid://lgykdoiid8ba" path="res://materials/Window.tres" id="2_8u04n"]
+[ext_resource type="Script" path="res://Scripts/Spawn.cs" id="3_1sh7q"]
+[ext_resource type="Script" path="res://Scripts/WinArea.cs" id="4_hw4hn"]
+[ext_resource type="PackedScene" uid="uid://bg3jh56q41kyb" path="res://Scenes/Accessibility.tscn" id="5_u8ahq"]
+[ext_resource type="PackedScene" uid="uid://brd7jgijl03jm" path="res://Scenes/Security.tscn" id="6_6u7vf"]
+[ext_resource type="PackedScene" uid="uid://dcmbbjce1oik6" path="res://Scenes/Privacy.tscn" id="7_bphlt"]
+[ext_resource type="PackedScene" uid="uid://bhryw3qvcd7ov" path="res://Scenes/SellingData.tscn" id="8_alc1u"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dtr0u"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dfcki"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
+[sub_resource type="BoxMesh" id="BoxMesh_r1otn"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_s6nhh"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ho8pw"]
+size = Vector3(1, 0.513196, 1)
+
 [node name="EthicsHub" type="Node3D"]
 
 [node name="Block" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.064, 0, 0, 0, 2, 0, 0, 0, 3.29, -0.142, -3.22, 0)
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 10, -0.142, -3.22, 0)
 material_override = ExtResource("1_5mrdm")
 mesh = SubResource("BoxMesh_dtr0u")
 
@@ -18,3 +33,333 @@ mesh = SubResource("BoxMesh_dtr0u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Block/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_dfcki")
+
+[node name="Wall R" type="MeshInstance3D" parent="."]
+transform = Transform3D(49, 0, 0, 0, 10, 0, 0, 0, 0.5, -0.142, 2.28, 4.75)
+material_override = ExtResource("2_8u04n")
+mesh = SubResource("BoxMesh_dtr0u")
+skeleton = NodePath("../Block")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall R"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall R/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dfcki")
+
+[node name="Wall L" type="MeshInstance3D" parent="."]
+transform = Transform3D(49, 0, 0, 0, 10, 0, 0, 0, 0.5, -0.142, 2.28, -4.75)
+material_override = ExtResource("2_8u04n")
+mesh = SubResource("BoxMesh_dtr0u")
+skeleton = NodePath("../Block")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall L"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall L/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dfcki")
+
+[node name="Wall B" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 10, 0, 0, 0, 9, -24.892, 2.28, 0)
+material_override = ExtResource("2_8u04n")
+mesh = SubResource("BoxMesh_dtr0u")
+skeleton = NodePath("../Block")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall B"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall B/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dfcki")
+
+[node name="Wall F" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 10, 0, 0, 0, 9, 24.608, 2.28, 0)
+material_override = ExtResource("2_8u04n")
+mesh = SubResource("BoxMesh_dtr0u")
+skeleton = NodePath("../Block")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall F"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall F/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dfcki")
+
+[node name="Wall C1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 10, 0, 0, 0, 0.5, 24.608, 2.28, 4.75)
+material_override = ExtResource("1_5mrdm")
+mesh = SubResource("BoxMesh_dtr0u")
+skeleton = NodePath("../Block")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall C1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall C1/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dfcki")
+
+[node name="Wall C2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 10, 0, 0, 0, 0.5, 24.608, 2.28, -4.75)
+material_override = ExtResource("1_5mrdm")
+mesh = SubResource("BoxMesh_dtr0u")
+skeleton = NodePath("../Block")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall C2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall C2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dfcki")
+
+[node name="Wall C3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 10, 0, 0, 0, 0.5, -24.892, 2.28, -4.75)
+material_override = ExtResource("1_5mrdm")
+mesh = SubResource("BoxMesh_dtr0u")
+skeleton = NodePath("../Block")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall C3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall C3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dfcki")
+
+[node name="Wall C4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 10, 0, 0, 0, 0.5, -24.892, 2.28, 4.75)
+material_override = ExtResource("1_5mrdm")
+mesh = SubResource("BoxMesh_dtr0u")
+skeleton = NodePath("../Block")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall C4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall C4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dfcki")
+
+[node name="Wall 1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 10, 0, 0, 0, 9, -12.5, 2.28, 0)
+material_override = ExtResource("2_8u04n")
+mesh = SubResource("BoxMesh_dtr0u")
+skeleton = NodePath("../Block")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall 1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall 1/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dfcki")
+
+[node name="Wall 2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 10, 0, 0, 0, 9, 0, 2.28, 0)
+material_override = ExtResource("2_8u04n")
+mesh = SubResource("BoxMesh_dtr0u")
+skeleton = NodePath("../Block")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall 2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall 2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dfcki")
+
+[node name="Wall 3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 10, 0, 0, 0, 9, 12.5, 2.28, 0)
+material_override = ExtResource("2_8u04n")
+mesh = SubResource("BoxMesh_dtr0u")
+skeleton = NodePath("../Block")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall 3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall 3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dfcki")
+
+[node name="Spawn0" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -23.5, -1.336, 0)
+material_override = ExtResource("1_5mrdm")
+transparency = 1.0
+cast_shadow = 0
+mesh = SubResource("BoxMesh_r1otn")
+script = ExtResource("3_1sh7q")
+Level = 7
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Spawn0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Spawn0/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_s6nhh")
+disabled = true
+
+[node name="Spawn1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -11, -1.336, 0)
+material_override = ExtResource("1_5mrdm")
+transparency = 1.0
+cast_shadow = 0
+mesh = SubResource("BoxMesh_r1otn")
+script = ExtResource("3_1sh7q")
+Level = 8
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Spawn1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Spawn1/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_s6nhh")
+disabled = true
+
+[node name="Spawn2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.5, -1.336, 0)
+material_override = ExtResource("1_5mrdm")
+transparency = 1.0
+cast_shadow = 0
+mesh = SubResource("BoxMesh_r1otn")
+script = ExtResource("3_1sh7q")
+Level = 9
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Spawn2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Spawn2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_s6nhh")
+disabled = true
+
+[node name="Spawn3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14, -1.336, 0)
+material_override = ExtResource("1_5mrdm")
+transparency = 1.0
+cast_shadow = 0
+mesh = SubResource("BoxMesh_r1otn")
+script = ExtResource("3_1sh7q")
+Level = 10
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Spawn3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Spawn3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_s6nhh")
+disabled = true
+
+[node name="AccessY" type="Area3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15, -1.5, 2.5)
+script = ExtResource("4_hw4hn")
+Level = 7
+NextLevel = 12
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AccessY"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1, 0)
+shape = SubResource("BoxShape3D_ho8pw")
+
+[node name="Label3D" type="Label3D" parent="AccessY"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.937072, 0)
+billboard = 1
+text = "Add Accessibility
+Features"
+font_size = 96
+
+[node name="AccessN" type="Area3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15, -1.5, -2.5)
+script = ExtResource("4_hw4hn")
+Level = 7
+NextLevel = 11
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AccessN"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1, 0)
+shape = SubResource("BoxShape3D_ho8pw")
+
+[node name="Label3D" type="Label3D" parent="AccessN"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.937072, 0)
+billboard = 1
+text = "Skip Accessibility
+Features"
+font_size = 96
+
+[node name="SecurityY" type="Area3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.5, -1.5, 2.5)
+script = ExtResource("4_hw4hn")
+Level = 8
+NextLevel = 14
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SecurityY"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1, 0)
+shape = SubResource("BoxShape3D_ho8pw")
+
+[node name="Label3D" type="Label3D" parent="SecurityY"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.937072, 0)
+billboard = 1
+text = "Invest In Advanced
+Application Security"
+font_size = 96
+
+[node name="SecurityN" type="Area3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.5, -1.5, -2.5)
+script = ExtResource("4_hw4hn")
+Level = 9
+NextLevel = 13
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SecurityN"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1, 0)
+shape = SubResource("BoxShape3D_ho8pw")
+
+[node name="Label3D" type="Label3D" parent="SecurityN"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.937072, 0)
+billboard = 1
+text = "Only Code Basic
+Security Measures"
+font_size = 96
+
+[node name="PrivacyY" type="Area3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10, -1.5, -2.5)
+script = ExtResource("4_hw4hn")
+Level = 9
+NextLevel = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PrivacyY"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1, 0)
+shape = SubResource("BoxShape3D_ho8pw")
+
+[node name="Label3D" type="Label3D" parent="PrivacyY"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.937072, 0)
+billboard = 1
+text = "Increase Database
+Security With Special
+Hashing"
+font_size = 96
+
+[node name="PrivacyN" type="Area3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10, -1.5, 2.5)
+script = ExtResource("4_hw4hn")
+Level = 9
+NextLevel = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PrivacyN"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1, 0)
+shape = SubResource("BoxShape3D_ho8pw")
+
+[node name="Label3D" type="Label3D" parent="PrivacyN"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.937072, 0)
+billboard = 1
+text = "Leave Database
+Alone"
+font_size = 96
+
+[node name="DataY" type="Area3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.5, -2.5)
+script = ExtResource("4_hw4hn")
+Level = 10
+NextLevel = 17
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DataY"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1, 0)
+shape = SubResource("BoxShape3D_ho8pw")
+
+[node name="Label3D" type="Label3D" parent="DataY"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.937072, 0)
+billboard = 1
+text = "Keep User Information
+And Make Money Other Ways"
+font_size = 96
+
+[node name="DataN" type="Area3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.5, 2.5)
+script = ExtResource("4_hw4hn")
+Level = 10
+NextLevel = 18
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DataN"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1, 0)
+shape = SubResource("BoxShape3D_ho8pw")
+
+[node name="Label3D" type="Label3D" parent="DataN"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.937072, 0)
+billboard = 1
+text = "Sell User Data
+For More Money"
+font_size = 96
+
+[node name="Accessibility" parent="." instance=ExtResource("5_u8ahq")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.7754, -2.72001, -43.1024)
+
+[node name="Security" parent="." instance=ExtResource("6_6u7vf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.25, 3.78604, 54.6139)
+
+[node name="Privacy" parent="." instance=ExtResource("7_bphlt")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 120.555, 5.81646, -21.2709)
+
+[node name="SellingData" parent="." instance=ExtResource("8_alc1u")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 149.996, -2.72, 32.3581)

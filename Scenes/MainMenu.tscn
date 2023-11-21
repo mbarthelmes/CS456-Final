@@ -106,7 +106,7 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="Control/SettingsSubMenu"]
 layout_mode = 2
-text = "Zellorb"
+text = "Zellorb - Ethics Edition"
 horizontal_alignment = 1
 
 [node name="OptionButton" type="OptionButton" parent="Control/SettingsSubMenu"]
@@ -140,4 +140,4 @@ offset_top = -23.0
 offset_right = 24.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "John, Logan, Matt, Victor"
+text = "Matt, Victor"
