@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://jgfmxalobjqt"]
+[gd_scene load_steps=15 format=3 uid="uid://jgfmxalobjqt"]
 
 [ext_resource type="Material" uid="uid://bvlxw2qpfbqpe" path="res://materials/Floor.tres" id="1_5mrdm"]
 [ext_resource type="Material" uid="uid://lgykdoiid8ba" path="res://materials/Window.tres" id="2_8u04n"]
 [ext_resource type="Script" path="res://Scripts/Spawn.cs" id="3_1sh7q"]
+[ext_resource type="Script" path="res://Scripts/TriggerZone.cs" id="4_6lidd"]
 [ext_resource type="Script" path="res://Scripts/WinArea.cs" id="4_hw4hn"]
 [ext_resource type="PackedScene" uid="uid://bg3jh56q41kyb" path="res://Scenes/Accessibility.tscn" id="5_u8ahq"]
 [ext_resource type="PackedScene" uid="uid://brd7jgijl03jm" path="res://Scenes/Security.tscn" id="6_6u7vf"]
@@ -170,6 +171,21 @@ Level = 7
 shape = SubResource("ConcavePolygonShape3D_s6nhh")
 disabled = true
 
+[node name="Trigger0" type="Area3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -23.5, -0.975603, 0)
+visible = false
+script = ExtResource("4_6lidd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger0"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1, 0)
+shape = SubResource("BoxShape3D_ho8pw")
+
+[node name="Label3D" type="Label3D" parent="Trigger0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.937072, 0)
+billboard = 1
+text = "Accessibility"
+font_size = 96
+
 [node name="Spawn1" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -11, -1.336, 0)
 material_override = ExtResource("1_5mrdm")
@@ -184,6 +200,22 @@ Level = 8
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Spawn1/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_s6nhh")
 disabled = true
+
+[node name="Trigger1" type="Area3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -11, -0.976, 0)
+visible = false
+script = ExtResource("4_6lidd")
+Level = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger1"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1, 0)
+shape = SubResource("BoxShape3D_ho8pw")
+
+[node name="Label3D" type="Label3D" parent="Trigger1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.937072, 0)
+billboard = 1
+text = "Security"
+font_size = 96
 
 [node name="Spawn2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.5, -1.336, 0)
@@ -200,6 +232,22 @@ Level = 9
 shape = SubResource("ConcavePolygonShape3D_s6nhh")
 disabled = true
 
+[node name="Trigger2" type="Area3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.5, -0.976, 0)
+visible = false
+script = ExtResource("4_6lidd")
+Level = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger2"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1, 0)
+shape = SubResource("BoxShape3D_ho8pw")
+
+[node name="Privacy" type="Label3D" parent="Trigger2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.937072, 0)
+billboard = 1
+text = "Security"
+font_size = 96
+
 [node name="Spawn3" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14, -1.336, 0)
 material_override = ExtResource("1_5mrdm")
@@ -214,6 +262,23 @@ Level = 10
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Spawn3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_s6nhh")
 disabled = true
+
+[node name="Trigger3" type="Area3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14, -0.976, 0)
+visible = false
+script = ExtResource("4_6lidd")
+Level = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger3"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1, 0)
+shape = SubResource("BoxShape3D_ho8pw")
+
+[node name="Privacy" type="Label3D" parent="Trigger3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.937072, 0)
+billboard = 1
+text = "Data
+"
+font_size = 96
 
 [node name="AccessY" type="Area3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15, -1.5, 2.5)

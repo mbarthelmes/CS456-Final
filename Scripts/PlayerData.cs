@@ -39,6 +39,30 @@ public partial class PlayerData : Node
 		((Label)FindParent("Node3D").FindChild("Score")).Text = ": " + Players[id].Score.ToString();
     }
 
+	public void OnTriggerZone(long id)
+	{
+        ((Label)FindParent("Node3D").FindChild("AccLbl")).Visible = false;
+        ((Label)FindParent("Node3D").FindChild("SecLbl")).Visible = false;
+        ((Label)FindParent("Node3D").FindChild("PrvLbl")).Visible = false;
+        ((Label)FindParent("Node3D").FindChild("DatLbl")).Visible = false;
+        if (id == 0)		// Accessibility
+		{
+            ((Label)FindParent("Node3D").FindChild("AccLbl")).Visible = true;
+        }
+		else if (id == 1)	// Security
+		{
+            ((Label)FindParent("Node3D").FindChild("SecLbl")).Visible = true;
+        }
+		else if (id == 2)	// Privacy
+		{
+            ((Label)FindParent("Node3D").FindChild("PrvLbl")).Visible = true;
+        }
+		else if (id == 3)	// Data
+		{
+			((Label)FindParent("Node3D").FindChild("DatLbl")).Visible = true;
+		}
+    }
+
 	public void OnPlayerDied(long id, int level)
 	{
 		var player = Players[id].Player;

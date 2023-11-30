@@ -20,3 +20,43 @@ text = ": 0"
 position = Vector2(1083, 37)
 scale = Vector2(0.081852, 0.081852)
 texture = ExtResource("1_sx4rq")
+
+[node name="PlaceholderLabel" type="Label" parent="."]
+visible = false
+offset_top = 602.0
+offset_right = 1151.0
+offset_bottom = 628.0
+text = "PLACEHOLDER"
+horizontal_alignment = 1
+
+[node name="AccLbl" type="Label" parent="."]
+visible = false
+offset_top = 602.0
+offset_right = 1151.0
+offset_bottom = 628.0
+text = "ACCESSIBILITY"
+horizontal_alignment = 1
+
+[node name="SecLbl" type="Label" parent="."]
+visible = false
+offset_top = 602.0
+offset_right = 1151.0
+offset_bottom = 628.0
+text = "SECURITY"
+horizontal_alignment = 1
+
+[node name="PrvLbl" type="Label" parent="."]
+visible = false
+offset_top = 602.0
+offset_right = 1151.0
+offset_bottom = 628.0
+text = "PRIVACY"
+horizontal_alignment = 1
+
+[node name="DatLbl" type="Label" parent="."]
+visible = false
+offset_top = 602.0
+offset_right = 1151.0
+offset_bottom = 628.0
+text = "DATA"
+horizontal_alignment = 1

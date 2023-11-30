@@ -109,3 +109,6 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 612.104, 4.90314, -613.228)
 
 [node name="YcpCollectible3" parent="." instance=ExtResource("11_6mkh3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 577.685, -3.25332, -467.478)
+
+[node name="YcpCollectible4" parent="." instance=ExtResource("11_6mkh3")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 467.81, 5.45887, -444.548)
