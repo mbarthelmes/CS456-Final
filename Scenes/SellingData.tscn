@@ -194,7 +194,7 @@ text = "Finished"
 font_size = 96
 
 [node name="Win2" type="Area3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -47.4159, 0.908358, -24.1428)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.4159, 1.69027, -24.1428)
 script = ExtResource("7_w3g8w")
 Level = 18
 NextLevel = 7

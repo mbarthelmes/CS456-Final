@@ -50,36 +50,6 @@ mesh = SubResource("BoxMesh_dtr0u")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Block2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_dfcki")
 
-[node name="Block3" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 2, 0, 0, 0, 3.29, 99.7045, -15.4185, -13.6567)
-material_override = ExtResource("2_n2s3e")
-mesh = SubResource("BoxMesh_dtr0u")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Block3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Block3/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_dfcki")
-
-[node name="Block4" type="MeshInstance3D" parent="."]
-transform = Transform3D(5.29919, 0, 2.79008, 0, 2, 0, -8.48048, 0, 1.74343, 121.633, -6.81052, -16.6438)
-material_override = ExtResource("2_n2s3e")
-mesh = SubResource("BoxMesh_dtr0u")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Block4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Block4/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_dfcki")
-
-[node name="Block5" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 2, 0, 0, 0, 3.29, 132.33, 1.27813, -30.6598)
-material_override = ExtResource("2_n2s3e")
-mesh = SubResource("BoxMesh_dtr0u")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Block5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Block5/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_dfcki")
-
 [node name="Privacy" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.977309, 0, 0.211819, 0, 1, 0, -0.211819, 0, 0.977309, 108.65, -0.183716, 73.6616)
 material_override = ExtResource("2_n2s3e")
@@ -131,7 +101,7 @@ shape = SubResource("ConcavePolygonShape3D_q6v0c")
 disabled = true
 
 [node name="Win" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.907, 6.90064, -28.1402)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.907, 6.65508, -28.2516)
 script = ExtResource("7_b75ns")
 Level = 15
 NextLevel = 10
@@ -164,7 +134,7 @@ text = "Finished"
 font_size = 96
 
 [node name="Win2" type="Area3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47.4145, 0.909392, 41.6755)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.4145, 1.20717, 41.6755)
 script = ExtResource("7_b75ns")
 Level = 16
 NextLevel = 10

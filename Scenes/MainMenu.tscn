@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d250q6rat0e6b"]
+[gd_scene load_steps=3 format=3 uid="uid://d250q6rat0e6b"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.cs" id="1_o5blj"]
+[ext_resource type="Texture2D" uid="uid://d34mbcnlh7xtk" path="res://Textures/Sky_Day_BlueSky_Equirect.png" id="2_ydww4"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_o5blj")
@@ -16,7 +17,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="RootMenu" type="VBoxContainer" parent="Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -39,7 +39,7 @@ horizontal_alignment = 1
 
 [node name="Host" type="Button" parent="Control/RootMenu"]
 layout_mode = 2
-text = "Host"
+text = "Start"
 
 [node name="Join" type="Button" parent="Control/RootMenu"]
 layout_mode = 2
@@ -89,6 +89,7 @@ layout_mode = 2
 text = "Back"
 
 [node name="SettingsSubMenu" type="VBoxContainer" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -141,3 +142,21 @@ offset_right = 24.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Matt, Victor"
+
+[node name="Label2" type="Label" parent="Control"]
+offset_left = 1.0
+offset_top = 48.0
+offset_right = 1151.0
+offset_bottom = 204.0
+text = "You have been assigned to work on a new project for Zellorb Co. You are to build an application under a time limit.
+The hard part is deciding what extra features to add to your application: accessibility, security, and privacy, as well as deciding on how
+to make extra money. You can choose to skip any of these features with the downfall being a worse user experience, each being
+harder than the last. However, you must complete the project by the time limit to avoid failing and getting fired.
+After you have started down a specific path, you may choose to back out and try the other path.
+Are you ready to begin?"
+horizontal_alignment = 1
+
+[node name="SkyDayBlueSkyEquirect" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(816, 312)
+texture = ExtResource("2_ydww4")

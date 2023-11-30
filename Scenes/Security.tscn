@@ -50,26 +50,6 @@ mesh = ExtResource("2_xr44l")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ywi5q")
 
-[node name="Block2" type="MeshInstance3D" parent="."]
-transform = Transform3D(15, 0, 0, 0, 2, 0, 0, 0, 4, 64.953, -1.45074, 39.9109)
-material_override = ExtResource("4_haxnx")
-mesh = SubResource("BoxMesh_cpp80")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Block2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Block2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_kvpre")
-
-[node name="Block3" type="MeshInstance3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 4, 75.8336, 3.23814, 43.3846)
-material_override = ExtResource("4_haxnx")
-mesh = SubResource("BoxMesh_cpp80")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Block3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Block3/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_kvpre")
-
 [node name="Security" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.920623, 0.162331, -0.355107, -0.173648, 0.984808, 0, 0.349712, 0.0616637, 0.934825, 59.591, 0.359104, 95.8078)
 material_override = ExtResource("4_haxnx")
@@ -113,7 +93,7 @@ shape = SubResource("ConcavePolygonShape3D_5a2we")
 disabled = true
 
 [node name="Win" type="Area3D" parent="."]
-transform = Transform3D(0.233688, 0, -0.0888257, 0, 0.25, 0, 0.0888257, 0, 0.233688, 48.3115, 2.74492, -16.1123)
+transform = Transform3D(0.934751, 0, -0.355303, 0, 1, 0, 0.355303, 0, 0.934751, 48.3115, 3.43468, -16.1123)
 script = ExtResource("7_2baxm")
 Level = 13
 NextLevel = 9
@@ -146,7 +126,7 @@ text = "Finished"
 font_size = 96
 
 [node name="Win2" type="Area3D" parent="."]
-transform = Transform3D(0.233688, 0, -0.0888257, 0, 0.25, 0, 0.0888257, 0, 0.233688, 83.4973, 10.6184, 43.3765)
+transform = Transform3D(0.934751, 0, -0.355303, 0, 1, 0, 0.355303, 0, 0.934751, 84.0736, 10.7972, 44.0038)
 script = ExtResource("7_2baxm")
 Level = 14
 NextLevel = 9
