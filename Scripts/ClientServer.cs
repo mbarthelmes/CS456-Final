@@ -19,6 +19,7 @@ public partial class ClientServer : Node
 
     private PackedScene _playerScene;
     private PlayerData _playerData;
+   //private SceneTreeTimer timer;
 
     public override void _Ready()
     {
@@ -28,6 +29,7 @@ public partial class ClientServer : Node
 
         Multiplayer.PeerConnected += Multiplayer_PeerConnected;
         Multiplayer.PeerDisconnected += Multiplayer_PeerDisconnected;
+            
     }
 
     private void Multiplayer_PeerConnected(long id)
@@ -37,7 +39,12 @@ public partial class ClientServer : Node
         FindParent("Node3D").AddChild(newPlayer);
         _playerData.OnPlayerConnected(newPlayer);
     }
-
+    public void SomeFunction(SceneTreeTimer timer)
+    {
+        GD.Print("start");
+        ((Label)FindParent("Node3D").FindChild("TimeLbl")).Text = "Time: " + timer.TimeLeft ;
+        GD.Print("end");
+    }
     public override void _Process(double delta)
     {
         if (Multiplayer.MultiplayerPeer != null && Multiplayer.IsServer())
@@ -52,6 +59,13 @@ public partial class ClientServer : Node
                 {
                     var player = info.Player;
                     Rpc(nameof(UpdateClient), id, player.Position, player.Quaternion, player.LinearVelocity, player.AngularVelocity);
+
+                    if (_playerData.startTime.Equals(true))
+                    {
+                        SomeFunction(_playerData.timer);
+                    }
+                    
+                    
                 }
             }
         }

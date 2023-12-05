@@ -1,12 +1,19 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Globalization;
+using System.Threading.Tasks;
 
 public partial class PlayerData : Node
 {
 	public Dictionary<long, PlayerInfo> Players = new Dictionary<long, PlayerInfo>();
 	private Levels _levels;
+	private Timer _timer;
+
+    [Export] 
+    public SceneTreeTimer timer;
+    public bool startTime = false;
 
     public override void _Ready()
     {
@@ -16,6 +23,7 @@ public partial class PlayerData : Node
     public void OnPlayerConnected(Player player)
 	{
 		Players.TryAdd(player.Id, new PlayerInfo(player));
+        
 	}
 
 	public void OnPlayerDisconnected(long id)
@@ -33,12 +41,21 @@ public partial class PlayerData : Node
         player.AngularVelocity = Vector3.Zero;
     }
 
-	public void OnCollectableCollected(long id)
+	public void OnCollectableCollected(long id) 
 	{
 		Players[id].Score++;
 		((Label)FindParent("Node3D").FindChild("Score")).Text = ": " + Players[id].Score.ToString();
     }
 
+    public void SomeFunction(SceneTreeTimer timer)
+    {
+        GD.Print("start");
+        
+       ToSignal(timer, SceneTreeTimer.SignalName.Timeout);
+        ((Label)FindParent("Node3D").FindChild("TimeLbl")).Text = ": " + timer.TimeLeft ;
+
+        GD.Print("end");
+    }
 	public void OnTriggerZone(long id)
 	{
         ((Label)FindParent("Node3D").FindChild("AccLbl")).Visible = false;
@@ -48,7 +65,18 @@ public partial class PlayerData : Node
         if (id == 0)		// Accessibility
 		{
             ((Label)FindParent("Node3D").FindChild("AccLbl")).Visible = true;
-        }
+
+            ((Label)FindParent("Node3D").FindChild("TimeLbl")).Visible = true;
+
+            if ( startTime == false)
+            {
+                timer = GetTree().CreateTimer(60.0f, true, true, true);
+                ToSignal(timer, SceneTreeTimer.SignalName.Timeout);
+                startTime = true;
+            }
+            
+
+		}
 		else if (id == 1)	// Security
 		{
             ((Label)FindParent("Node3D").FindChild("SecLbl")).Visible = true;

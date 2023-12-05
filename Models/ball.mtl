@@ -1,0 +1,79 @@
+# Blender 3.3.1 MTL File: 'ball.blend'
+# www.blender.org
+
+newmtl BLACK_3.002
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Ns D:/Blender/2023 work/RB-79 Ball/New folder/BLACK 3_Roughness.png
+map_Bump -bm 1.000000 D:/Blender/2023 work/RB-79 Ball/New folder/BLACK 3_Normal.png
+
+newmtl Big_gun.002
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Blender/2023 work/RB-79 Ball/New folder/Big gun_BaseColor.png
+map_Ns D:/Blender/2023 work/RB-79 Ball/New folder/Big gun_Roughness.png
+map_Bump -bm 1.000000 D:/Blender/2023 work/RB-79 Ball/New folder/Big gun_Normal.png
+
+newmtl Black_.002
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Blender/2023 work/RB-79 Ball/New folder/Black _BaseColor.png
+map_Ns D:/Blender/2023 work/RB-79 Ball/New folder/Black _Roughness.png
+map_Bump -bm 1.000000 D:/Blender/2023 work/RB-79 Ball/New folder/Black _Normal.png
+
+newmtl Glass.002
+Ns 845.420288
+Ka 1.000000 1.000000 1.000000
+Kd 0.005084 0.021964 0.008635
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl red_ball.002
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Blender/2023 work/RB-79 Ball/New folder/red ball_BaseColor.png
+map_Ns D:/Blender/2023 work/RB-79 Ball/New folder/red ball_Roughness.png
+map_Bump -bm 1.000000 D:/Blender/2023 work/RB-79 Ball/New folder/red ball_Normal.png
+
+newmtl white_ball.002
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump -bm 1.000000 D:/Blender/2023 work/RB-79 Ball/New folder/white ball_Normal.png
+
+newmtl white_ball_2.002
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Blender/2023 work/RB-79 Ball/New folder/white ball 2_BaseColor.png
+map_Ns D:/Blender/2023 work/RB-79 Ball/New folder/white ball 2_Roughness.png
+map_refl D:/Blender/2023 work/RB-79 Ball/New folder/white ball 2_Metallic.png
+map_Bump -bm 1.000000 D:/Blender/2023 work/RB-79 Ball/New folder/white ball 2_Normal.png

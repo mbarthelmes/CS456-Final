@@ -19,6 +19,7 @@ public partial class TriggerZone : Area3D
     {
         if(body is Player player)
         {
+            SceneTreeTimer timer;
             _playerData.OnTriggerZone(Level);
             GD.Print($"Player {player.Id} accessed level {Level}.");
         }
