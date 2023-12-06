@@ -6,6 +6,7 @@ public partial class Camera : Camera3D
 {
 	private Node3D _player;
     private Node2D _menu;
+    private Node2D _GameOver;
     private float _rotationX = Mathf.Pi / 2;
     private float _rotationY = 0f;
     private float LookAroundSpeed = 0.01f;
@@ -15,7 +16,9 @@ public partial class Camera : Camera3D
 	public override void _Ready()
 	{
 		_player = (Node3D)FindParent("Node3D").FindChild("Player");
+        _GameOver = (Node2D)_player.FindChild("GameOver");
         _menu = (Node2D)FindParent("Node3D").FindChild("MainMenu");
+
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,7 +32,7 @@ public partial class Camera : Camera3D
     {
         if (@event is InputEventMouseMotion mouseMotionEvent)
         {
-            if (_menu.IsVisibleInTree())
+            if (_menu.IsVisibleInTree() || _GameOver.IsVisibleInTree())
             {
                 Input.MouseMode = Input.MouseModeEnum.Confined;
             }

@@ -9,15 +9,20 @@ public partial class PlayerData : Node
 {
 	public Dictionary<long, PlayerInfo> Players = new Dictionary<long, PlayerInfo>();
 	private Levels _levels;
-	private Timer _timer;
+    private Node3D _player;
+    private Node2D _GameOver;
 
     [Export] 
     public SceneTreeTimer timer;
     public bool startTime = false;
+    public SignalAwaiter signal;
 
     public override void _Ready()
     {
         _levels = (Levels)GetParent().FindChild("Levels");
+        _player = (Node3D)FindParent("Node3D").FindChild("Player");
+        _GameOver = (Node2D)_player.FindChild("GameOver");
+
     }
 
     public void OnPlayerConnected(Player player)
@@ -26,7 +31,7 @@ public partial class PlayerData : Node
         
 	}
 
-	public void OnPlayerDisconnected(long id)
+    public void OnPlayerDisconnected(long id)
 	{
 		Players.Remove(id, out PlayerInfo playerInfo);
 		playerInfo.Player.QueueFree();
@@ -49,14 +54,10 @@ public partial class PlayerData : Node
 
     public void SomeFunction(SceneTreeTimer timer)
     {
-        GD.Print("start");
-        
-       ToSignal(timer, SceneTreeTimer.SignalName.Timeout);
-        ((Label)FindParent("Node3D").FindChild("TimeLbl")).Text = ": " + timer.TimeLeft ;
+        ((Label)FindParent("Node3D").FindChild("TimeLbl")).Text = "Timer: " + timer.TimeLeft;
 
-        GD.Print("end");
     }
-	public void OnTriggerZone(long id)
+    public void OnTriggerZone(long id)
 	{
         ((Label)FindParent("Node3D").FindChild("AccLbl")).Visible = false;
         ((Label)FindParent("Node3D").FindChild("SecLbl")).Visible = false;
@@ -71,7 +72,7 @@ public partial class PlayerData : Node
             if ( startTime == false)
             {
                 timer = GetTree().CreateTimer(60.0f, true, true, true);
-                ToSignal(timer, SceneTreeTimer.SignalName.Timeout);
+                signal = ToSignal(timer, SceneTreeTimer.SignalName.Timeout);
                 startTime = true;
             }
             
@@ -97,6 +98,15 @@ public partial class PlayerData : Node
 		player.Position = _levels.Spawns[level].Position;
 		player.LinearVelocity = Vector3.Zero;
 		player.AngularVelocity = Vector3.Zero;
+    }
+
+    public void OnTimeOut()
+    {
+        if (_GameOver != null)
+        {
+            _GameOver.Visible = true;
+        }
+        
     }
 }
 

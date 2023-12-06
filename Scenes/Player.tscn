@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkhwc1k00hff4"]
+[gd_scene load_steps=6 format=3 uid="uid://dkhwc1k00hff4"]
 
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_dhlpx"]
 [ext_resource type="Material" uid="uid://juux73tgiuth" path="res://materials/Marbles/Zeller.tres" id="2_gsmiu"]
+[ext_resource type="PackedScene" uid="uid://c8vbxllgmxphr" path="res://Scenes/GameOver.tscn" id="3_dwahm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_miq2w"]
 
@@ -17,3 +18,5 @@ shape = SubResource("SphereShape3D_miq2w")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = ExtResource("2_gsmiu")
 mesh = SubResource("SphereMesh_x3lt4")
+
+[node name="GameOver" parent="." instance=ExtResource("3_dwahm")]
