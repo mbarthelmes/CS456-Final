@@ -54,7 +54,7 @@ public partial class PlayerData : Node
 
     public void SomeFunction(SceneTreeTimer timer)
     {
-        ((Label)FindParent("Node3D").FindChild("TimeLbl")).Text = "Timer: " + timer.TimeLeft;
+        ((Label)FindParent("Node3D").FindChild("TimeLbl")).Text = "Timer: " + Math.Round(timer.TimeLeft, 2);
 
     }
     public void OnTriggerZone(long id)
@@ -71,7 +71,7 @@ public partial class PlayerData : Node
 
             if ( startTime == false)
             {
-                timer = GetTree().CreateTimer(60.0f, true, true, true);
+                timer = GetTree().CreateTimer(180.0f, true, true, true);
                 signal = ToSignal(timer, SceneTreeTimer.SignalName.Timeout);
                 startTime = true;
             }
@@ -90,9 +90,50 @@ public partial class PlayerData : Node
 		{
 			((Label)FindParent("Node3D").FindChild("DatLbl")).Visible = true;
 		}
+        else if (id == 4)   // End Game
+        {
+            if (_GameOver != null && _GameOver.Visible == false)
+            {
+                ((Label)FindParent("Node3D").FindChild("TimeLbl")).Visible = false;
+                ((Label)FindParent("Node3D").FindChild("AppWin")).Visible = true;
+                _GameOver.Visible = true;
+            }
+        }
     }
 
-	public void OnPlayerDied(long id, int level)
+    public void LevelComplete(long level)
+    {
+        switch(level)
+        {
+            case 11:    // AccLose
+                ((Label)FindParent("Node3D").FindChild("AccLose")).Visible = true;
+                break;
+            case 12:    // AccWin
+                ((Label)FindParent("Node3D").FindChild("AccWin")).Visible = true;
+                break;
+            case 13:    // SecLose
+                ((Label)FindParent("Node3D").FindChild("SecLose")).Visible = true;
+                break;
+            case 14:    // SecWin
+                ((Label)FindParent("Node3D").FindChild("SecWin")).Visible = true;
+                break;
+            case 15:    // PriWin
+                ((Label)FindParent("Node3D").FindChild("PriWin")).Visible = true;
+                break;
+            case 16:    // PriLose
+                ((Label)FindParent("Node3D").FindChild("PriLose")).Visible = true;
+                break;
+            case 17:    // DatWin
+                ((Label)FindParent("Node3D").FindChild("DatWin")).Visible = true;
+                break;
+            case 18:    // DatLose
+                ((Label)FindParent("Node3D").FindChild("DatLose")).Visible = true;
+                break;
+        }
+    }
+
+
+    public void OnPlayerDied(long id, int level)
 	{
 		var player = Players[id].Player;
 		player.Position = _levels.Spawns[level].Position;
@@ -102,8 +143,25 @@ public partial class PlayerData : Node
 
     public void OnTimeOut()
     {
-        if (_GameOver != null)
+        if (_GameOver != null && _GameOver.Visible == false)
         {
+            ((Label)FindParent("Node3D").FindChild("AccLbl")).Visible = false;
+            ((Label)FindParent("Node3D").FindChild("SecLbl")).Visible = false;
+            ((Label)FindParent("Node3D").FindChild("PrvLbl")).Visible = false;
+            ((Label)FindParent("Node3D").FindChild("DatLbl")).Visible = false;
+
+            ((Label)FindParent("Node3D").FindChild("AppLose")).Visible = true;
+            ((Label)FindParent("Node3D").FindChild("TimeLose")).Visible = true;
+            ((Label)FindParent("Node3D").FindChild("TimeLbl")).Visible = false;
+
+            ((Label)FindParent("Node3D").FindChild("AccWin")).Visible = false;
+            ((Label)FindParent("Node3D").FindChild("AccLose")).Visible = false;
+            ((Label)FindParent("Node3D").FindChild("SecWin")).Visible = false;
+            ((Label)FindParent("Node3D").FindChild("SecLose")).Visible = false;
+            ((Label)FindParent("Node3D").FindChild("PriWin")).Visible = false;
+            ((Label)FindParent("Node3D").FindChild("PriLose")).Visible = false;
+            ((Label)FindParent("Node3D").FindChild("DatWin")).Visible = false;
+            ((Label)FindParent("Node3D").FindChild("DatLose")).Visible = false;
             _GameOver.Visible = true;
         }
         

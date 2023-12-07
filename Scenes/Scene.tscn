@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bkea8podrbdrq"]
+[gd_scene load_steps=19 format=3 uid="uid://bkea8podrbdrq"]
 
 [ext_resource type="PackedScene" uid="uid://d250q6rat0e6b" path="res://Scenes/MainMenu.tscn" id="1_j6cve"]
 [ext_resource type="Script" path="res://Scripts/Camera.cs" id="1_ua35d"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dr2aunc22e5ag" path="res://Scenes/Level1.tscn" id="5_2lxkn"]
 [ext_resource type="Script" path="res://Scripts/LoseArea.cs" id="5_3ycx0"]
 [ext_resource type="Script" path="res://Scripts/WinArea.cs" id="5_6frfg"]
-[ext_resource type="PackedScene" uid="uid://c7au6votussoo" path="res://Scenes/YcpCollectible.tscn" id="11_6mkh3"]
 [ext_resource type="PackedScene" uid="uid://b8y6uf3kpvlqi" path="res://Scenes/Hud.tscn" id="12_2q7lw"]
 [ext_resource type="Script" path="res://Scripts/Spawn.cs" id="16_u7g4m"]
 [ext_resource type="PackedScene" uid="uid://jgfmxalobjqt" path="res://Scenes/EthicsHub.tscn" id="18_wlt4k"]
@@ -99,16 +98,4 @@ script = ExtResource("16_u7g4m")
 Level = 6
 
 [node name="EthicsHub" parent="." instance=ExtResource("18_wlt4k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 451.549, -1.39199, -545.958)
-
-[node name="YcpCollectible" parent="." instance=ExtResource("11_6mkh3")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 414.396, -1.04788, -627.598)
-
-[node name="YcpCollectible2" parent="." instance=ExtResource("11_6mkh3")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 612.104, 4.90314, -613.228)
-
-[node name="YcpCollectible3" parent="." instance=ExtResource("11_6mkh3")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 577.685, -3.25332, -467.478)
-
-[node name="YcpCollectible4" parent="." instance=ExtResource("11_6mkh3")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 467.81, 5.45887, -444.548)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 451.549, -1.39199, -545.958)

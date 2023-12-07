@@ -77,7 +77,7 @@ public partial class Player : RigidBody3D
 
         var spaceState = GetWorld3D().DirectSpaceState;
         // use global coordinates, not local to node
-        var query = PhysicsRayQueryParameters3D.Create(GlobalPosition, GlobalPosition - (Vector3.Up * (0.7f)));
+        var query = PhysicsRayQueryParameters3D.Create(GlobalPosition, GlobalPosition - (Vector3.Up * (0.75f)));
         var result = spaceState.IntersectRay(query);
 
         if (result.TryGetValue("collider", out Variant collider) && collider.As<CollisionObject3D>() != this)

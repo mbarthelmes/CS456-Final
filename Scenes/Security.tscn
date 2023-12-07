@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://brd7jgijl03jm"]
+[gd_scene load_steps=16 format=3 uid="uid://brd7jgijl03jm"]
 
 [ext_resource type="Material" uid="uid://bvlxw2qpfbqpe" path="res://materials/Floor.tres" id="1_n0ru0"]
 [ext_resource type="Material" uid="uid://boshlmtebhgh5" path="res://materials/Floor2.tres" id="2_v6vnn"]
@@ -26,6 +26,8 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_byfg4"]
 size = Vector3(1, 0.513196, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ulfye"]
 
 [node name="Security" type="Node3D"]
 
@@ -112,7 +114,7 @@ font_size = 96
 transform = Transform3D(50, 0, 0, 0, 0.25, 0, 0, 0, 40, 34.1599, -15.2269, 12.9243)
 visible = false
 script = ExtResource("7_2baxm")
-Level = 13
+Level = 25
 NextLevel = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Lose"]
@@ -140,3 +142,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.937072, 0)
 billboard = 1
 text = "Finished"
 font_size = 96
+
+[node name="Box1" type="MeshInstance3D" parent="."]
+transform = Transform3D(200, 0, 0, 0, 75, 0, 0, 0, 1, 46.0848, 14.7983, -56.2071)
+material_override = ExtResource("1_n0ru0")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_ulfye")
+
+[node name="Box2" type="MeshInstance3D" parent="."]
+transform = Transform3D(200, 0, 0, 0, 75, 0, 0, 0, 1, 46.0848, 14.7983, 70.2779)
+material_override = ExtResource("1_n0ru0")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_ulfye")
+
+[node name="Box3" type="MeshInstance3D" parent="."]
+transform = Transform3D(200, 0, 0, 0, 1, 0, 0, 0, 150, 46.0848, -21.8781, 6.66238)
+material_override = ExtResource("1_n0ru0")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_ulfye")
+
+[node name="Box4" type="MeshInstance3D" parent="."]
+transform = Transform3D(200, 0, 0, 0, 1, 0, 0, 0, 150, 46.0848, 50.4154, 6.66238)
+material_override = ExtResource("1_n0ru0")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_ulfye")
+
+[node name="Box5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 75, 0, 0, 0, 150, -50.9285, 14.7983, 6.25969)
+material_override = ExtResource("1_n0ru0")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_ulfye")
+
+[node name="Box6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 75, 0, 0, 0, 150, 144.53, 14.7983, 6.25969)
+material_override = ExtResource("1_n0ru0")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_ulfye")

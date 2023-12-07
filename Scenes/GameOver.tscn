@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8vbxllgmxphr"]
+[gd_scene load_steps=3 format=3 uid="uid://c8vbxllgmxphr"]
 
 [ext_resource type="Script" path="res://Scripts/GameOver.cs" id="1_27h1g"]
+[ext_resource type="Texture2D" uid="uid://d34mbcnlh7xtk" path="res://Textures/Sky_Day_BlueSky_Equirect.png" id="2_ov4k0"]
 
 [node name="GameOver" type="Node2D"]
 visible = false
@@ -17,7 +18,117 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="AppLose" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 531.0
+offset_top = 20.0
+offset_right = 618.0
+offset_bottom = 46.0
+text = "Game Over"
+
+[node name="AppWin" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_top = 20.0
+offset_right = 1151.0
+offset_bottom = 46.0
+text = "Application Complete!"
+horizontal_alignment = 1
+
+[node name="TimeLose" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_top = 216.0
+offset_right = 1153.0
+offset_bottom = 242.0
+text = "You failed to meet the deadline, causing you to be fired."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AccWin" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_top = 90.0
+offset_right = 1153.0
+offset_bottom = 116.0
+text = "You decided to create accessibility features, bringing in a wider audience to your app."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AccLose" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_top = 90.0
+offset_right = 1153.0
+offset_bottom = 116.0
+text = "You decided to skip on creating accessibility features, bringing in less of an audience than you would’ve received otherwise."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SecWin" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_top = 175.0
+offset_right = 1153.0
+offset_bottom = 201.0
+text = "You decided to upgrade your application security, allowing customers to feel safer."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SecLose" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_top = 175.0
+offset_right = 1153.0
+offset_bottom = 201.0
+text = "You decided to skip upgrading your application security, making some customers feel unsafe while using the app."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PriWin" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_top = 260.0
+offset_right = 1153.0
+offset_bottom = 286.0
+text = "You decided to upgrade your database security, minimizing the risk of customer information getting out in case of a data leak."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PriLose" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_top = 260.0
+offset_right = 1153.0
+offset_bottom = 286.0
+text = "You decided to leave your database as it is, creating a risk of customer information if a data leak were to occur."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DatWin" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_top = 340.0
+offset_right = 1153.0
+offset_bottom = 366.0
+text = "You decided to avoid selling user data. This will make you less money in the short term, however, your customers’ trust in you has increased."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DatLose" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_top = 340.0
+offset_right = 1153.0
+offset_bottom = 366.0
+text = "You decided to sell user data. This will make you more money in the short term, however, your customers’ trust in you has decreased."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Label" type="Label" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = 531.0
 offset_top = 272.0
@@ -26,9 +137,15 @@ offset_bottom = 295.0
 text = "Game Over"
 
 [node name="Exit" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 534.0
-offset_top = 327.0
+offset_top = 475.0
 offset_right = 571.0
-offset_bottom = 358.0
+offset_bottom = 506.0
 scale = Vector2(2.22075, 1.44121)
 text = "Exit"
+
+[node name="SkyDayBlueSkyEquirect" type="Sprite2D" parent="Control"]
+z_index = -1
+position = Vector2(816, 312)
+texture = ExtResource("2_ov4k0")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://jgfmxalobjqt"]
+[gd_scene load_steps=16 format=3 uid="uid://jgfmxalobjqt"]
 
 [ext_resource type="Material" uid="uid://bvlxw2qpfbqpe" path="res://materials/Floor.tres" id="1_5mrdm"]
 [ext_resource type="Material" uid="uid://lgykdoiid8ba" path="res://materials/Window.tres" id="2_8u04n"]
@@ -22,6 +22,8 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ho8pw"]
 size = Vector3(1, 0.513196, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4yojg"]
 
 [node name="EthicsHub" type="Node3D"]
 
@@ -418,13 +420,49 @@ For More Money"
 font_size = 96
 
 [node name="Accessibility" parent="." instance=ExtResource("5_u8ahq")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.7754, -2.72001, -43.1024)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5541, -2.72001, -190.845)
 
 [node name="Security" parent="." instance=ExtResource("6_6u7vf")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.25, 3.78604, 54.6139)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.1256, 3.78604, 193.933)
 
 [node name="Privacy" parent="." instance=ExtResource("7_bphlt")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 120.555, 5.81646, -21.2709)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120.555, 5.81646, -112.833)
 
 [node name="SellingData" parent="." instance=ExtResource("8_alc1u")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 149.996, -2.72, 32.3581)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 149.996, -2.72, 102.193)
+
+[node name="Box7" type="MeshInstance3D" parent="SellingData"]
+transform = Transform3D(200, 0, 0, 0, 75, 0, 0, 0, 1, 165.04, 14.7983, 33.6232)
+material_override = ExtResource("1_5mrdm")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_4yojg")
+
+[node name="Box8" type="MeshInstance3D" parent="SellingData"]
+transform = Transform3D(200, 0, 0, 0, 75, 0, 0, 0, 1, 165.04, 14.7983, 160.108)
+material_override = ExtResource("1_5mrdm")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_4yojg")
+
+[node name="Box9" type="MeshInstance3D" parent="SellingData"]
+transform = Transform3D(200, 0, 0, 0, 1, 0, 0, 0, 150, 165.04, -21.8781, 96.4927)
+material_override = ExtResource("1_5mrdm")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_4yojg")
+
+[node name="Box10" type="MeshInstance3D" parent="SellingData"]
+transform = Transform3D(200, 0, 0, 0, 1, 0, 0, 0, 150, 165.04, 50.4154, 96.4927)
+material_override = ExtResource("1_5mrdm")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_4yojg")
+
+[node name="Box11" type="MeshInstance3D" parent="SellingData"]
+transform = Transform3D(1, 0, 0, 0, 75, 0, 0, 0, 150, 68.0271, 14.7983, 96.09)
+material_override = ExtResource("1_5mrdm")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_4yojg")
+
+[node name="Box12" type="MeshInstance3D" parent="SellingData"]
+transform = Transform3D(1, 0, 0, 0, 75, 0, 0, 0, 150, 263.486, 14.7983, 96.09)
+material_override = ExtResource("1_5mrdm")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_4yojg")
